@@ -1,0 +1,965 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="829df693-1996-4f51-a919-1d87ba596dbc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../DC/lab3/discussion/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DC/lab3/discussion/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../DC/lab3/publisher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../DC/lab3/publisher/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BCIP/prac1/ОУИС, ПЗ №1, Подсказки для выполнения задания.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BCIP/prac1/ОУИС, ПЗ №1, Приложение А (для печати).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BCIP/prac1/ОУИС, ПЗ №1, Приложение А.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BCIP/prac1/ОУИС, ПЗ №1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BCIP/prac2/ОУИС, ПЗ №2, Коды ИНИД.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BCIP/prac2/ОУИС, ПЗ №2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BCIP/Патентный троллинг.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac1/ОИнфБ, ПЗ №1. Приложения с примерами оценок.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac1/ОИнфБ, ПЗ №1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac1/Отчёт №1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac2/1. Закон РБ №455-З - Об информации, информатизации и защите информации.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac2/2. Закон РБ №99-З - О защите персональных данных.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac2/3. Закон РБ №170-З - О государственных секретах.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac2/4. Закон РБ № 16-З - О коммерческой тайне.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac2/ОИнфБ, ПЗ №2, Приложение А (таблица для заполнения).docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../BoInfS/prac2/ОИнфБ, ПЗ №2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.idea/artifacts/FileTransfer_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.idea/artifacts/FileTransfer_jar2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/FTP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/FileProcessCell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/FileTransfer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/FileTreeCell.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/images/dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/com/course/filetransfer/images/file_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/resources/com/course/filetransfer/images/dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/resources/com/course/filetransfer/images/file_icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/resources/com/course/filetransfer/main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Coursework 4 semester/FileTransfer/src/main/resources/com/course/filetransfer/processWin.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/FileTransfer/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/KSiS.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/lab1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/out/production/lab1/MacIP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/out/production/lab1/MacIPSock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/out/production/lab1/Request.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/src/MacIP.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab1/src/MacIPSock.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/lab2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/out/production/lab2/Client.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/out/production/lab2/ClientHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/out/production/lab2/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/src/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/src/ClientHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/src/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/src/Server.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2/src/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.idea/artifacts/Chat.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.idea/artifacts/lab2_ui_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/chat.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/hs_err_pid19184.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/hs_err_pid20760.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/hs_err_pid21220.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/out/artifacts/Chat/lab2_ui.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/src/main/java/com/ksan/lab2/ui/lab2_ui/Chat.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/src/main/java/com/ksan/lab2/ui/lab2_ui/Client.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/src/main/java/com/ksan/lab2/ui/lab2_ui/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/src/main/java/com/ksan/lab2/ui/lab2_ui/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/src/main/resources/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab2_ui/src/main/resources/com/ksan/lab2/ui/lab2_ui/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/src/main/java/com/ksan/lab3/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/src/main/java/com/ksan/lab3/FileStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/src/main/java/com/ksan/lab3/Requester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/src/main/java/com/ksan/lab3/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3/src/main/resources/com/ksan/lab3/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3_serv/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3_serv/.idea/lab3_serv.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3_serv/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3_serv/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3_serv/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab3_serv/ksan_serv.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/java/com/ksan/lab4/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/java/com/ksan/lab4/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/java/com/ksan/lab4/FileStorage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/java/com/ksan/lab4/Requester.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/java/com/ksan/lab4/Server.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/resources/com/ksan/lab4/auth.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../KSaN/lab4/src/main/resources/com/ksan/lab4/http.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/final.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/lab1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/out/production/lab1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/out/production/lab1/Token.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/out/production/lab1/Tokenizer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1/src/Tokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/src/main/java/com/example/lab1_gradle/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/src/main/java/com/example/lab1_gradle/HelloController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/src/main/java/com/example/lab1_gradle/Token.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/src/main/java/com/example/lab1_gradle/Tokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab1_gui/src/main/resources/com/example/lab1_gradle/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/src/main/java/com/lab2/lab2_gui/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/src/main/java/com/lab2/lab2_gui/Jilb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/src/main/java/com/lab2/lab2_gui/Parser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/src/main/java/com/lab2/lab2_gui/Tokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab2_gui/src/main/resources/com/lab2/lab2_gui/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/src/main/java/com/mss/lab3_ui/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/src/main/java/com/mss/lab3_ui/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/src/main/java/com/mss/lab3_ui/Tokenizer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/lab3_ui/src/main/resources/com/mss/lab3_ui/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/new_algo.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/scheme.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/scheme.vsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/test_code_lab2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Лабораторная работа №1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Лабораторная работа №2(МСИС)-Джилб.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Лабораторная работа №2(МСИС).docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Лабораторная_работа_№2МСИС_граничные.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Метрология_2023/МСиСвИТ_153501-5;151001-4/Задание№1_Метрики_Холстеда/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Метрология_2023/МСиСвИТ_153501-5;151001-4/Задание№1_Метрики_Холстеда/Метрика_Холстеда_Теория.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Метрология_2023/МСиСвИТ_153501-5;151001-4/Задание№1_Метрики_Холстеда/Языки для жеребьевки.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Метрология_2023/МСиСвИТ_153501-5;151001-4/Задание№2_МетрикиПотокаУправления/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Метрология_2023/МСиСвИТ_153501-5;151001-4/Задание№2_МетрикиПотокаУправления/МетрикиПотокаУправления_Теория.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Метрология_2023/МСиСвИТ_153501-5;151001-4/Задание№3_МетрикиПотокаДанных/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Метрология_2023/МСиСвИТ_153501-5;151001-4/Задание№3_МетрикиПотокаДанных/МетрикиПотокаДанных_Теория.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №1/Метрология КР1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №2/Метрология КР2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №3/Метрология 3 кр+лектосы.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №3/Метрология КР3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №4/Voprosy.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №4/Метрология КР4.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №4/Метрология(вся).docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №4/Тема 5.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../MSS(IC)/Тесты/Тест №4/Тема 6.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/.$Game2.drawio.bkp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/.$Game3.drawio.bkp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/.$Game4 — копия.drawio.bkp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/.$Game4.drawio.bkp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/.$Game4.drawio.dtmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game2.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game2.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game3.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game3.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game4 — копия.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game4.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game4.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game4_1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game4_2.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game5.drawio.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/Game5.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/Game3.drawio" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/ScoreGain.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Bonus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Button.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Cube.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Display_Object.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Game.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/GameStop_Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Game_Field.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Menu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Menu_Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/MessageBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Mov_Obj.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Plate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/PlayBall.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/PlayerData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Player_Choose_Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Players.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Settings.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/Settings_Window.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/out/production/ScoreGain/SolidCube.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGain/src/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Bonus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Cube.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Display_Object.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/GameField.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/GameStopWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Menu.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/MenuItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/MessageBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/MovObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Plate.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/PlayBall.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/PlayerData.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Player_Choose_Window.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Players.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Serializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Settings.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/SettingsWindow.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/SolidCube.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/Statistic.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/com/oop/scoregainprac/StatusBar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainPrac/src/main/resources/com/oop/scoregainprac/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainProject/src/main/java/com/oop/scoregainprac/scoregainproject/GameEvent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainProject/src/main/java/com/oop/scoregainprac/scoregainproject/GameEvents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../OOTP&amp;SP/ScoreGainProject/src/main/java/com/oop/scoregainprac/scoregainproject/Proxy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../RPI/Лабораторная работа 2/react_lab/react_lab" beforeDir="false" afterPath="$PROJECT_DIR$/../../../RPI/Лабораторная работа 2/react_lab/react_lab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/index.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Вопросы для подготовки к зачёту.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Вопросы, тесты, задания для самостоятельной работы студентов/Вопросы, тесты, заданиялогия.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Интерактивные тесты/Тема 1/index1.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Интерактивные тесты/Тема 2/index2.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Интерактивные тесты/Тема 3/index3.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Интерактивные тесты/Тема 4/index4.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Интерактивные тесты/Тема 5/index5.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/content/Интерактивные тесты/Тема 6/ndex6.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Контроль_знаний/test.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Об авторах/author.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Об авторах/images/Качалов.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Об авторах/images/Пацеева.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Об авторах/images/Щелкова.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/css/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/background.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/bsuir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/bsuir1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/logo_left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/logo_new.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/practice.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/practice_gray.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/program.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/program_gray.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/question.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/question_gray.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/questionmark.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/theory.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/theory_gray.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/Безимени-1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/Безимени-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/Безимени-3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Оболочка/images/Обращение 2008.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Практика/content/Планы семинарских занятий для студентов дневной формы обучения/Планы семинарских занятий.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Практика/content/Тематика контрольных работ для студентов заочной и дистанционной форм обучения/Контрольные работы для студентов заочной и дистанционной форм обучения.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Практика/practice.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Программа/content/Программа.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Программа/program.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk1/Социология. Тема 1.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk2/Социология. Тема 2.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk3/Социология. Тема 3.files/image001.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk3/Социология. Тема 3.files/image002.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk3/Социология. Тема 3.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk4/Социология. Тема 4.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk5/Социология. Тема 5.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk6/Социология. Тема 6.files/image001.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/content/lk6/Социология. Тема 6.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Doc1.files/filelist.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Doc1.files/image001.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Doc1.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Doc2.files/filelist.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Doc2.files/image001.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Doc2.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Бабосов.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Берджесс.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Бердяев.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Блау.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Богданов.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Булгаков.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Вебер.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Визе.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Гиддингс.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Данилов.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Дарендорф.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Де Роберти.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Дильтей.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Дюркгейм.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Зиммель.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Знанецкий.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Кареев.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Кистяковский.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Ковалевский.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Козер.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Конт.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Лавров.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Лебон.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Ленин.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Лилиенфельд.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Мак-Дугалл.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Маркс.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Мертон.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Мечников.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Мид.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Миллс.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Михайловский.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Морено.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Мэйо.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Новгородцев.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Парето.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Парк.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Парсонс.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Петражицкий.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Пичета.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Смолл.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Сорокин.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Спенсер.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Стронин.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Струве.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Тард.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Теннис.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Томас.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Уорд.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Франк.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Хоманс.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Шюц.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Энгельс.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk1/Южаков.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk2/Выборка.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk3/Белл.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk3/Данилов.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Бурдье.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Дарендорф.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Дэвис и Мур.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Кравченко.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Профиль стратификации.files/filelist.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Профиль стратификации.files/image001.emz" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Профиль стратификации.files/image002.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Профиль стратификации.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Рисунок1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Турен.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk4/Уорнер.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk5/Фрейд.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Белл.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Гумплович.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Данилевский.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Контркультура.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Массовая.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Народная.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Подходы.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Ростоу.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Самнер.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Субкультура.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Тойнби.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Тоффлер.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Шпенглер.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/images/lk6/Элитарная.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../SOC(EC)/ЭРУД Социология/Теория/theory.htm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/01 02 - Web Architectures and Principles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/2sims.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/Apple Flower.mp3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/file.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/lab1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/out/production/lab1/Decimaci.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/out/production/lab1/Letter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/out/production/lab1/Visioner.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/src/Decimaci.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1/src/Visioner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/cipher_d.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/cipher_v.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/input.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/plain_d.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/plain_v.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/src/main/java/com/lab1/ti/lab1gr/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/src/main/java/com/lab1/ti/lab1gr/Decimaci.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/src/main/java/com/lab1/ti/lab1gr/FileWork.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/src/main/java/com/lab1/ti/lab1gr/HelloApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/src/main/java/com/lab1/ti/lab1gr/Visioner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab1gr/src/main/resources/com/lab1/ti/lab1gr/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/hs_err_pid16180.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/replay_pid16180.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/src/main/java/com/ti/lab2/Cipher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/src/main/java/com/ti/lab2/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/src/main/java/com/ti/lab2/LSFR.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab2/src/main/resources/com/ti/lab2/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.idea/artifacts/lab3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/src/main/java/com/ti/lab3/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/src/main/java/com/ti/lab3/ElGamal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/src/main/java/com/ti/lab3/ElGamalC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/src/main/java/com/ti/lab3/SpeedExp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/src/main/java/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/lab3/src/main/resources/com/ti/lab3/hello-view.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/res.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/res.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/test_video.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/~$бораторная №1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/~$бораторная №3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/~WRL2853.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/Лабораторная №1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/Лабораторная №2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/Лабораторная №3.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/Пример составления теста для лр2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №1_простейшие_шифры/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №1_простейшие_шифры/Виженер_СтолбУлучш.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №1_простейшие_шифры/Задание№1_варианты.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №1_простейшие_шифры/Составление тестов для лр1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №1_простейшие_шифры/практикум_криптография_c_изменениями.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №2_потоковое_шифрование/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №2_потоковое_шифрование/Задание№2_Потоковое_варианты.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №2_потоковое_шифрование/Пример составления теста для лр2.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №2_потоковое_шифрование/теория_задание№2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №3_Крипт_с _открытым_ключом/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №3_Крипт_с _открытым_ключом/Задание№3_варианты.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №3_Крипт_с _открытым_ключом/Примеры работы алгоритмов.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №4_ЭЦП/ReadMe.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../TI/ТИ_2023/Задание №4_ЭЦП/Задание№4_ЭЦП_варианты.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/01 01 - Web Technologies Overview.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/01 02 - Web Architectures and Principles.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/01 02 - Web Architectures and Principles.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/02 01 - LAMP or LEMP Setup.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/02 02 - WAMP or WEMP Setup.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/02 03 - Development Environment Setup.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/03 01 - About PHP.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/03 02 - General Syntax and Data Types.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab1/www/fedor.saprankov/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/booking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/brazil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/canada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/eco-road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/grece.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/island.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/jessica.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/john.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/kindtraveler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/linda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/norway.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/scotland.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/skyscanner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/images/trevor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/partners.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab2/tours.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/.idea/lab3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/booking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/brazil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/canada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/eco-road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/grece.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/island.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/jessica.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/john.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/kindtraveler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/linda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/norway.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/scotland.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/skyscanner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/images/trevor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/main_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/partners_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab3/tours_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/.idea/lab4.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/email.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/booking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/brazil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/canada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/eco-road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/grece.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/island.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/jessica.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/john.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/kindtraveler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/linda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/norway.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/scotland.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/skyscanner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/images/trevor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/main_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/partners_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/redir_simp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab4/tours_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/.idea/lab5.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/email.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/booking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/brazil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/canada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/eco-road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/grece.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/island.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/jessica.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/john.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/kindtraveler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/linda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/norway.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/scotland.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/skyscanner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/images/trevor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/main_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/partners_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/redir_simp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/regform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab5/tours_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/.idea/lab6.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/email.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/formel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/booking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/brazil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/canada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/eco-road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/grece.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/island.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/jessica.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/john.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/kindtraveler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/linda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/norway.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/scotland.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/skyscanner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/images/trevor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/main_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/partners_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/redir_simp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/regform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab6/tours_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/.idea/lab7.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/.idea/php.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/COMMITMENT" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/SECURITY.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/VERSION" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/get_oauth_token.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-af.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ar.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-az.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ba.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-be.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-bg.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ca.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-cs.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-da.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-de.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-el.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-eo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-es.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-et.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-fa.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-fi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-fo.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-fr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-gl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-he.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-hi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-hr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-hu.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-hy.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-id.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-it.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ja.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ka.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ko.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-lt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-lv.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-mg.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-mn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ms.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-nb.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-nl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-pl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-pt.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-pt_br.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ro.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-ru.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-sk.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-sl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-sr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-sr_latn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-sv.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-tl.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-tr.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-uk.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-vi.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-zh.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/language/phpmailer.lang-zh_cn.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/src/DSNConfigurator.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/src/Exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/src/OAuth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/src/OAuthTokenProvider.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/src/PHPMailer.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/src/POP3.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/PhpMailer/src/SMTP.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/email.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/error.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/formel.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/booking.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/brazil.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/canada.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/eco-road.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/grece.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/island.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/jessica.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/john.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/kindtraveler.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/landscape.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/linda.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/mountain.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/norway.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/scotland.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/skyscanner.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/images/trevor.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/main_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/order.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/partners_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/redir_simp.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/regform.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/register.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/result.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/slider.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../WT/lab7/tours_cont.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Материалы 1 курс/Учеба(разное)/Telegram Desktop/ма.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Материалы 1 курс/ЧМ ЛР 1,2,3/Таблицы к лабе 1 ЧМ.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Материалы 1 курс/ЧМ ЛР 1,2,3/Таблицы к лабе 1 ЧМ.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ОАиП/Оаип 1 сем/laba5_document.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ОАиП/Оаип 1 сем/laba5_document.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ОАиП/Оаип 1 сем/laba7_document.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ОАиП/Оаип 1 сем/laba7_document.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Вариационный ряд полигон гистограмма Гмурман (2).pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Графическое представление.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator.sln" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Factories/SampleFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Factories/SampleWriterFactory.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Implementations/DiscreteSample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Implementations/DiscreteSampleWriter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Implementations/NonDiscreteSample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Implementations/NonDiscreteSampleCalculator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Implementations/NonDiscreteSampleWriter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Implementations/SampleCalculator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Implementations/SampleRange.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Interfaces/ISample.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Interfaces/ISampleRange.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Interfaces/ISampleWriter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Pair/Pair.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/Program.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/tvims-calculator-master/tvims-calculator-master/TVIMS Calculator/TVIMS Calculator.csproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Калькулятор/Калькулятор для расчетной.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Моя расчетная/Вычисления по расчетной работе НИКИТА ПЕЛИХ.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Моя расчетная/Расчетная работа НИКИТА ПЕЛИХ.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Raschetnaya_Rabota_Po_Statistike.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 1/Matstat_Diskretn.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 1/Matstat_Nediskretn.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 1/Meshok_Itog_Po_Sobrannym_Dannym.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 1/Otchet.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 1/Tvims_Sbor_Dannykh.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 2/Upd1/Rabota_Po_Statistike_Vychislenia.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 2/Upd1/Raschetnaya_Rabota_Po_Statistike.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 2/Upd2/Rabota_Po_Statistike_Vychislenia.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 2/Upd2/Raschetnaya_Rabota_Po_Statistike.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 2/Upd3/Rabota_Po_Statistike_Vychislenia.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Прочие/Вариант 2/Upd3/Raschetnaya_Rabota_Po_Statistike.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Расчетная работа по ТВиМС 2021 Этап 1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Сбор информации/Сбор информации.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Тема 3. Числовые характеристики вариационного ряда.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Теорема сложение дисперсий Пример (2).xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 1/Теорема сложения дисперсий.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 2/Моя расчетная/Вычисления по расчетной работе НИКИТА ПЕЛИХ.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 2/Моя расчетная/Расчетная работа НИКИТА ПЕЛИХ.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 2/Проверка статических гипотез Гуринович Волковец .pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 2/Работа по статистике  2021 Этап 2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 2/Расчет теоретических частот Пояснение.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(3 курс)/Этап 2/Тема 5. Проверка гипотез о виде распределения.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(моя, 2 курс)/Cтатистические данные ТВиМС.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Расчетная работа(моя, 2 курс)/Cтатистические данные ТВиМС.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Теория/TViMS.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Теория/Задание Типовые законы распределения.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Теория/Задачи по ТВиМС доп задание 2022.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Теория/Распеределение задач по вариантам 2022.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Теория/Тебекин, Тебекина.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Экзамен и коллоквиум/Вопросы по ТВиМС к коллоквиуму 2022 обновленный.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Экзамен и коллоквиум/Вопросы по ТВиМС к коллоквиуму 2022.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Экзамен и коллоквиум/Вопросы по ТВиМС к экзамену зимняя сессия 2022 2023.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Экзамен и коллоквиум/Основные понятия по ТВиМС к экзамену.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ТВиМС/Экзамен и коллоквиум/Список основных понятий по ТВиМС к коллоквиуму.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Чужие лабы/Lab2GuiClient/Lab2GuiClient.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Чужие лабы/Lab2GuiClient/Lab2GuiClient.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Чужие лабы/Lab2GuiClient/out/production/Lab2GuiClient/Lab2GuiClient.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Чужие лабы/Lab2GuiClient/out/production/Lab2GuiClient/Lab2GuiClient.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Чужие лабы/jar3/src/main/java/com/example/jar3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Чужие лабы/jar3/src/main/java/com/example/jar3/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2i0W4zDohjGcuDD9rImmokdAwlp" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\StudyFiles\6th semester\Practice\Practice_Modsen_Frontend\practice_modsen_frontend\public\config" />
+      <recent name="D:\StudyFiles\6th semester\Practice\Practice_Modsen_Frontend\practice_modsen_frontend\public\resources" />
+      <recent name="D:\StudyFiles\6th semester\Practice\Practice_Modsen_Frontend\practice_modsen_frontend\src" />
+      <recent name="D:\StudyFiles\6th semester\Practice\Practice_Modsen_Frontend\practice_modsen_frontend\src\resources" />
+      <recent name="D:\StudyFiles\6th semester\Practice\Practice_Modsen_Frontend\practice_modsen_frontend\src\js" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.235" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="829df693-1996-4f51-a919-1d87ba596dbc" name="Changes" comment="" />
+      <created>1718627787561</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1718627787561</updated>
+      <workItem from="1718627788624" duration="3437000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
