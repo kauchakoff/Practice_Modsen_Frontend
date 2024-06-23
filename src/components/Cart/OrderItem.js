@@ -1,9 +1,9 @@
 import React, {useEffect, useRef} from "react";
 import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Image, Row } from "react-bootstrap";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/OrderItem.css'
-import {getCookie, setCookie} from "../../utils/cookieUtils";
+import {getCookie, setCookie} from "../../utils/cookie/cookieUtils";
 
 
 class CardState {
@@ -17,8 +17,6 @@ class CardState {
     removeCallBack;
 
 
-
-
     static loadCardState(id,removeCallback) {
         const currentCart = JSON.parse(getCookie("cart") || "[]");
         const existingItemIndex = currentCart.findIndex(item => item.id === id);
@@ -26,7 +24,7 @@ class CardState {
         {
             const item  = currentCart[existingItemIndex];
             //insert here loading product info by product id
-            return new CardState(item.id,"title","description",12,item.count,"imageUrl",removeCallback);
+            return new CardState(item.id,"title","description",7.99,item.count,"imageUrl",removeCallback);
         }
 
     }

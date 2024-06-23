@@ -1,11 +1,12 @@
 import { Button, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Logo from './Logo';
 import './Header.css';
 import CartButton from './CartButton';
 import OrdersHistoryButton from './OrdersHistoryButton';
+import {useRef} from "react";
 
 export function updateHeader  (itemsCount,totalCost)  {
     // Здесь ваш код для обновления header
@@ -17,6 +18,8 @@ export function updateHeader  (itemsCount,totalCost)  {
 }
 
 function Header() {
+
+
     return (
         <header>
             <Row className='header-container'>
@@ -25,7 +28,7 @@ function Header() {
                 </Col>
                 <Col>
                     <Col>
-                        <Link to={"/cart"}><CartButton/></Link>
+                        <Link to={"/cart"}><CartButton /></Link>
                     </Col>
                     <Col>
                         <Link to={"/orders"}><OrdersHistoryButton/></Link>

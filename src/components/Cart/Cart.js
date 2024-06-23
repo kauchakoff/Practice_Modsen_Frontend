@@ -26,7 +26,7 @@ const Cart = (props) => {
     useEffect(()=>{
         const totalQuantity = Math.max(0,cartItems.reduce((acc, item) => acc + item.count, 0));
         console.log(totalCost)
-        updateHeader(totalQuantity,totalCost)
+        updateHeader(totalQuantity,totalCost.toFixed(2))
     },[totalCost,cartItems])
 
     return (
@@ -43,7 +43,7 @@ const Cart = (props) => {
                        </ul>
                    </div>
                    <div className="form-container">
-                       <CartForm  totalPrice={totalCost}></CartForm>
+                       <CartForm  totalPrice={totalCost.toFixed(2)}></CartForm>
                    </div>
                </div>
            ):(

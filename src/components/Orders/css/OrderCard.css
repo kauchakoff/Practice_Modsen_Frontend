@@ -128,7 +128,7 @@
 }
 .price-text {
     font-weight: bold;
-    color: orange;
+    color: white;
     display: inline-block;
     transform: scaleY(0.95);
 }

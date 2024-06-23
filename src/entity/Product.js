@@ -1,4 +1,5 @@
 import Big from 'big.js';
+import * as uuid from "uuid";
 
 class Product {
 
@@ -16,7 +17,7 @@ class Product {
         this.caloricValue = caloricValue;
     }*/
 
-    id = 0;
+    id = uuid.v4()
 
     category = 0;
 

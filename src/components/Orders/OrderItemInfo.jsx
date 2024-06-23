@@ -1,7 +1,7 @@
 import React, {useEffect, useRef} from "react";
 import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Image, Row } from "react-bootstrap";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/OrderModel.css'
 
 
