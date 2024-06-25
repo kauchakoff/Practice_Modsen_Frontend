@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { login } from '../../utils/auth/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import './Login.css';
+import styles from './Login.module.css';
+import Form from '../Form/Form';
 
 const Login = ({ setUser }) => {
   const [email, setEmail] = useState('');
@@ -9,7 +10,7 @@ const Login = ({ setUser }) => {
   const [error, setError] = useState('');
   const history = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const user = login(email, password);
@@ -21,23 +22,17 @@ const Login = ({ setUser }) => {
   };
 
   return (
-    <div>
+    <div className={styles.loginContainer}>
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          placeholder="Email" 
-        />
-        <input 
-          type="password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          placeholder="Password" 
-        />
-        <button type="submit">Login</button>
-      </form>
+      <Form
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+        onSubmit={handleSubmit}
+      >
+
+      </Form>
       {error && <p>{error}</p>}
       <p>Don't have an account? <Link to="/register">Register</Link></p>
     </div>

@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { register } from '../../utils/auth/auth';
 import { Link, useNavigate } from 'react-router-dom';
 
-import './Register.css';
+import styles from './Register.module.css';
+import Form from '../Form/Form';
 
 const Register = ({ setUser }) => {
   const [email, setEmail] = useState('');
@@ -22,23 +23,15 @@ const Register = ({ setUser }) => {
   };
 
   return (
-    <div>
+    <div className={styles.RegisterContainer}>
       <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <input 
-          type="email" 
-          value={email} 
-          onChange={(e) => setEmail(e.target.value)} 
-          placeholder="Email" 
-        />
-        <input 
-          type="password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)} 
-          placeholder="Password" 
-        />
-        <button type="submit">Register</button>
-      </form>
+      <Form
+        email={email}
+        setEmail={setEmail}
+        password={password}
+        setPassword={setPassword}
+        onSubmit={handleSubmit}
+      ></Form>
       {error && <p>{error}</p>}
       <p>Already have an account? <Link to="/login">Login</Link></p>
     </div>
