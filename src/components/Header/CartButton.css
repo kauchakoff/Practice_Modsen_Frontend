@@ -1,0 +1,34 @@
+:root {
+    --bs-primary: orange;
+    --bs-primary-rgb: green;
+    --bs-primary-hover: green;
+    --bs-primary-active: green;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-primary-hover);
+    --bs-btn-hover-border-color: var(--bs-primary-hover);
+    --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+    
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-primary-active);
+    --bs-btn-active-border-color: var(--bs-primary-active);
+}
+
+.price-text {
+    font-weight: bold;
+    display: inline-block;
+    transform: scaleY(0.95);
+}
+
+.price-text::after {
+    content: "$";
+}
+.item-count{
+
+}

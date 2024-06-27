@@ -1,0 +1,119 @@
+.order-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.order-card-container{
+    max-width: 450px;
+    border-width: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.delimiter{
+    height: 1px;
+    border: 1px lightgray solid;
+    width: 100%;
+}
+
+.order-card-id-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.order-card-id-container h6{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 1px;
+    color:dimgrey;
+}
+
+.order-card-info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.order-card-info-container span{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 1px;
+    color:dimgrey;
+}
+
+.order-card-address-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.order-card-address-container span{
+    text-align: left;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 1px;
+    color:dimgrey;
+}
+
+
+.order-card-price-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.order-card-price-container span{
+    margin-top: 10px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: 800;
+    margin-bottom: 1px;
+    color:dimgrey;
+}
+.order-card-buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.order-card-buttons-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.order-card-buttons-container button{
+    background: #FFA500FF;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+.order-card-buttons-container button:hover{
+    background: green;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+.orders-container{
+    width: 60%;
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 100px;
+    height: 700px;
+    display: flex;
+    justify-content: center;
+}

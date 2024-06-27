@@ -1,0 +1,53 @@
+.cart{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.scrollable-list{ /* Задайте желаемую максимальную высоту */
+    min-height: 700px;
+    overflow-y: auto; /* Включите вертикальную прокрутку */
+    list-style-type: none;
+}
+.scrollable-list::-webkit-scrollbar {
+    width: 0px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.cart-empty-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+}
+.cart-empty-span-container
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.cart-empty-span-container span{
+    font-weight: 700;
+    font-size: 50px;
+    text-align: center;
+    color: gray;
+}
+.price-text {
+    font-weight: bold;
+    color: orange;
+    display: inline-block;
+    transform: scaleY(0.95);
+}
+
+.price-text::after {
+    content: "$";
+}

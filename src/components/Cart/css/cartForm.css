@@ -1,0 +1,146 @@
+:root {
+    --bs-primary: orange;
+    --bs-primary-rgb: green;
+    --bs-primary-hover: green;
+    --bs-primary-active: green;
+}
+
+.address-form {
+    background: inherit;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    border:3px solid lightgray;
+    margin-bottom: 50px;
+    height: fit-content;
+
+}
+.address-form form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.address-form h2 {
+    font-weight: 600;
+    color: black;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+
+
+.form {
+    background: #0e101c;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.address-form p {
+    color: #ff0000;
+}
+
+.address-form p::before {
+    display: inline;
+    content: "⚠ ";
+}
+
+.address-form input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid white;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.address-form label {
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 10px;
+    color: black;
+    font-size: 18px;
+    font-weight: 600;
+}
+.address-form span{
+    line-height: 2;
+    text-align: left;
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    padding-left: 10px;
+    color: black;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.address-form button[type="submit"],
+.address-form input[type="submit"] {
+    background: #FFA500FF;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    margin-top: 15px;
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 10px;
+}
+
+.address-form input[type="text"] {
+    border:3px solid lightgray;
+}
+
+
+.address-form button[type="submit"]:hover,
+.address-form input[type="submit"]:hover {
+    background: green;
+}
+
+.address-form button[type="submit"]:active,
+.address-form input[type="button"]:active,
+.address-form input[type="submit"]:active {
+    transition: 0.3s all;
+    transform: translateY(3px);
+    border: 3px solid lightgray;
+    opacity: 0.8;
+}
+
+.address-form input:disabled {
+    opacity: 0.4;
+}
+
+.address-form input[type="button"]:hover {
+    transition: 0.3s all;
+}
+
+.address-form button[type="submit"],
+.address-form input[type="button"],
+.address-form input[type="submit"] {
+    -webkit-appearance: none;
+}
+
+.App {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.address-form button[type="button"] {
+    display: block;
+    appearance: none;
+    background: #333;
+    color: white;
+    border: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    border-radius: 4px;
+}
+
+.address-form hr {
+    margin-top: 30px;
+}
+

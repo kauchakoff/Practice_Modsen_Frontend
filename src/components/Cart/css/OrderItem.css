@@ -1,0 +1,124 @@
+:root {
+    --bs-primary: orange;
+    --bs-primary-rgb: green;
+    --bs-primary-hover: green;
+    --bs-primary-active: green;
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: var(--bs-primary);
+    --bs-btn-border-color: var(--bs-primary);
+    
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: var(--bs-primary-hover);
+    --bs-btn-hover-border-color: var(--bs-primary-hover);
+    --bs-btn-focus-shadow-rgb: var(--bs-primary-rgb);
+    
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: var(--bs-primary-active);
+    --bs-btn-active-border-color: var(--bs-primary-active);
+}
+
+.order-item {
+    margin: 10px;
+    width: 800px;
+
+    border-width: 3px;
+}
+
+.order-item-img-container {
+    flex-grow: 2;
+    display: flex;
+    align-items: center;
+}
+
+.order-item-img {   
+    width: 100%;
+}
+
+.order-item-info {
+    flex-grow: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    text-align: start;
+}
+
+.order-item-info .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.order-item-title {
+    -webkit-line-clamp: 2;
+}
+
+.order-item-description {
+    -webkit-line-clamp: 1;
+    color: gray;
+    width: 70%;
+}
+
+.order-item-count-choice {
+    margin-top: 20px;
+    width: fit-content;
+
+    display: grid;
+    grid-template-columns: auto 50px auto;
+}
+
+.order-item-count-choice .col{
+    display: flex;
+    align-items: center;
+}
+
+.order-item-count-choice button {
+    width: 38px;
+    border-radius: 50px;
+    font-weight: bold;
+}
+
+.order-item-counter {
+    justify-content: center;
+    border-bottom: 2px solid black;
+}
+
+.order-item-count-choice .card-text {
+    white-space: nowrap;
+    justify-content: center ;
+}
+
+.order-item-price {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    flex-grow: 2;
+    text-align: start;
+}
+
+.order-item-price-text {
+    font-weight: bold;
+    color: var(--bs-primary);
+    display: inline-block;
+    transform: scaleY(0.95);
+}
+
+.order-item-price-text::after {
+    content: "$";
+}
+
+.price-text {
+    font-weight: bold;
+    color: orange;
+    display: inline-block;
+    transform: scaleY(0.95);
+}
+
+.price-text::after {
+    content: "$";
+}
