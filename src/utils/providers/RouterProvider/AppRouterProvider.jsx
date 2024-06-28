@@ -8,6 +8,7 @@ import Cart from "../../../components/Cart/Cart";
 import Orders from "../../../components/Orders/Orders";
 import Layout from "../../../components/Layout/Layout";
 import Products from "../../../components/Products/Products";
+import CategoryEditor from "../../../components/Categories/CategoryEditor";
 
 const AppRouterProvider = () => {
   const [user, setUser] = useState(null);
@@ -24,6 +25,7 @@ const AppRouterProvider = () => {
           <Route path="/" element={<Layout/>}>
             <Route path="orders" element={<Orders/>}></Route>
             <Route path="cart" element={<Cart/>}/>
+            <Route path="categories" element={<CategoryEditor/>}  />
             <Route path="products" element={<Products/>}  />
             <Route path="" element = {user ? <Products setUser={setUser} /> : <Navigate to="login"/>} />
             <Route path="login" element = {user ? <Navigate to="" /> : <Login setUser={setUser} />}/>

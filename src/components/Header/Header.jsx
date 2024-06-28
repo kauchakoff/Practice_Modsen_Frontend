@@ -7,6 +7,7 @@ import './Header.css';
 import CartButton from './CartButton';
 import OrdersHistoryButton from './OrdersHistoryButton';
 import {useRef} from "react";
+import ViewCategoryEditorButton from "../Categories/ViewCategoryEditorButton";
 
 export function updateHeader  (itemsCount,totalCost)  {
     // Здесь ваш код для обновления header
@@ -27,6 +28,9 @@ function Header() {
                     <Link to={"/products"}><Logo/></Link>
                 </Col>
                 <Col>
+                    <Col>
+                        <Link to={"/categories"}><ViewCategoryEditorButton/></Link>
+                    </Col>
                     <Col>
                         <Link to={"/cart"}><CartButton /></Link>
                     </Col>
