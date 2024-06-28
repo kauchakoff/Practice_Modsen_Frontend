@@ -9,6 +9,7 @@ import Product from "../../entity/Product";
 import {useForm} from "react-hook-form";
 import {getCookie, setCookie} from "../../utils/cookie/cookieUtils";
 import {updateHeader} from "../Header/Header";
+import {createProductDB,updateProductDB,deleteProductDB} from "../../utils/db/dbUtils";
 
 
 
@@ -87,7 +88,40 @@ function Products() {
         product.description = elements.description.value;
         product.caloricValue = elements.caloricValue.value;
         data.preventDefault();
-    };
+    }
+
+    function createProduct() {
+        const createdProduct = new Product();
+        const arrayWithNewProduct  = [...productsArray,createdProduct];
+        setProductsArray(arrayWithNewProduct);
+        setCookie("products",JSON.stringify(arrayWithNewProduct),7);
+        setObjectIndex(productsArray.length);
+        setShowEditWindow(true);
+        createProductDB(createdProduct);
+    }
+
+    function deleteProduct(){
+        const removedElement = productsArray.filter((element,currentIndex)=>
+            removeIndex === currentIndex)[0];
+        const changedProductsArray = productsArray.filter((element,currentIndex)=>
+            removeIndex !== currentIndex);
+        setObjectIndex(changedProductsArray.length - 1);
+        setProductsArray(changedProductsArray);
+        let cart = JSON.parse(getCookie("cart"),"[]");
+        cart = cart.filter((element)=> element.id !== removedElement.id);
+        setCookie("cart",JSON.stringify(cart),7);
+        setShowDeleteConfirmation(false);
+        updateCartButton();
+        deleteProductDB(removedElement);
+    }
+
+    function updateProduct(event){
+        handleSubmit(handleSave(event,productsArray[objectIndex]));
+        event.preventDefault();
+        setShowEditWindow(false);
+        reset();
+        updateProductDB(productsArray[objectIndex]);
+    }
 
     return (
         <>
@@ -115,8 +149,6 @@ function Products() {
                 )) }
                 <Grid item xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
                     <Card style={{
-
-
                         margin:5,
                         display: "grid",
                         placeItems: "center"}}>
@@ -133,11 +165,7 @@ function Products() {
                                         height:50,
                                         borderRadius:100}}
                                     onClick={()=>{
-                                        const arrayWithNewProduct  = [...productsArray,new Product()];
-                                        setProductsArray(arrayWithNewProduct);
-                                        setCookie("products",JSON.stringify(arrayWithNewProduct),7);
-                                        setObjectIndex(productsArray.length);
-                                        setShowEditWindow(true);
+                                        createProduct();
                                     }}>+</Button>
                         </Card.Body>
                     </Card>
@@ -158,18 +186,7 @@ function Products() {
                 </Modal.Body>
                 <Modal.Footer>
                     <Button variant="danger" onClick={()=>{
-                        const removedElement = productsArray.filter((element,currentIndex)=>
-                            removeIndex === currentIndex);
-                        const changedProductsArray = productsArray.filter((element,currentIndex)=>
-                            removeIndex !== currentIndex);
-                        setObjectIndex(changedProductsArray.length - 1);
-                        setProductsArray(changedProductsArray);
-                        let cart = JSON.parse(getCookie("cart"),"[]");
-                        cart = cart.filter((element)=> element.id !== removedElement[0].id);
-                        setCookie("cart",JSON.stringify(cart),7);
-                        setShowDeleteConfirmation(false);
-                        updateCartButton();
-                        //place to perform back-end delete process
+                        deleteProduct();
                     }}>
                         Delete
                     </Button>
@@ -184,11 +201,7 @@ function Products() {
 
             <Modal show={showEditWindow} centered>
                 <form onSubmit={(event)=>{
-                    handleSubmit(handleSave(event,productsArray[objectIndex]));
-                    event.preventDefault();
-                    setShowEditWindow(false);
-                    reset();
-
+                    updateProduct(event);
                 }}>
                     <Modal.Header>
                         <Modal.Title>Product Editor</Modal.Title>
