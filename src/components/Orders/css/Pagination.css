@@ -1,0 +1,9 @@
+.btn-pagination {
+    width: 38px;
+    border-radius: 50px;
+}
+
+.page-info {
+    padding-top: 5px;
+    text-wrap: nowrap;
+}

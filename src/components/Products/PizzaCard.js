@@ -1,7 +1,7 @@
 import Card from "react-bootstrap/Card";
 import {CloseButton, ListGroup, Modal} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import Image from 'react-bootstrap/Image';
 import logo from "../../resources/pizza_test.png";
 import {getCookie, setCookie} from "../../utils/cookieUtils";
@@ -19,39 +19,27 @@ function PizzaCard(props) {
 
     let [count, setCount] = React.useState(1);
 
-    let isProductInCart = false;
+    useEffect(() => {
+        isExistInCart();
+    }, []);
 
-    let countFromCart = 0;
-
-    isExistInCart();
-
-
-    const target = useRef(null);
+    //const target = useRef(null);
 
     function addInCart() {
         const currentCart = JSON.parse(getCookie("cart") || "[]")
         currentCart.push({id:product.id,count:count});
         setCookie("cart", JSON.stringify(currentCart), 7);
-        if(!isInCart){
-            setIsInCart(true);
-        } else {
-            setIsInCart(false);
-        }
-        isProductInCart = true;
+        setIsInCart(true);
         updateCartButton();
     }
     function removeFromCart() {
         let currentCart = JSON.parse(getCookie("cart") || "[]");
         currentCart = currentCart.filter(item => item.id !== product.id);
         setCookie("cart", JSON.stringify(currentCart), 7);
-        if(!isInCart){
-            setIsInCart(true);
-        } else {
-            setIsInCart(false);
-        }
-
-        isProductInCart = false;
+        setIsInCart(false);
+        setCount(1);
         updateCartButton();
+
     }
     function increaseCount() {
         const currentCart = JSON.parse(getCookie("cart") || "[]");
@@ -79,16 +67,20 @@ function PizzaCard(props) {
         const existingProductId = currentCart.findIndex(item => item.id === product.id);
         if(existingProductId !== -1) {
             const currentProduct = currentCart[existingProductId].id === product.id ? product : undefined;
-            isProductInCart = typeof currentProduct !== 'undefined';
+            const isProductInCart = typeof currentProduct !== 'undefined';
             if(isProductInCart) {
-                countFromCart = currentCart[existingProductId].count;
+                setIsInCart(true);
+                setCount(currentCart[existingProductId].count);
+            } else {
+                setIsInCart(false);
             }
 
         } else {
-            isProductInCart = false;
+            setIsInCart(false);
         }
 
     }
+
 
 
 
@@ -107,8 +99,8 @@ function PizzaCard(props) {
                  <ListGroup horizontal={true} style={{alignItems:"center",
                                                       padding:0}}>
                      <Card.Title style={{fontSize: 30}}>{product.name}</Card.Title>
-                     <Button ref={target}
-                             variant="outline-primary"
+                     <Button
+                             variant="outline-warning"
                              style={{
                                  display: "flex",
                                  alignItems:'center',
@@ -126,7 +118,7 @@ function PizzaCard(props) {
 
              {
                  // isInCart is only for re-rendering,logic is based on isProductInCart value
-                 !((!isInCart && isInCart) || isProductInCart)
+                 !(isInCart)
 
                  ? (
                  <ListGroup horizontal={true}
@@ -159,7 +151,7 @@ function PizzaCard(props) {
                                      borderRadius:100}}
                              onClick={increaseCount}>+</Button>
                      <Card.Text style={{fontSize: 18,
-                                        margin: 0}}>{count >= countFromCart ? count : countFromCart}</Card.Text>
+                                        margin: 0}}>{count}</Card.Text>
                      <Button variant="primary"
                              style={{display: "flex",
                                  alignItems:'center',
@@ -203,7 +195,7 @@ function PizzaCard(props) {
                     </ListGroup>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button variant="secondary" onClick={() => {
+                    <Button variant="primary" onClick={() => {
                         setShowDescription(false)
                     }}>
                         Close

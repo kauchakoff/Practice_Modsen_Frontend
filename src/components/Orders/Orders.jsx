@@ -1,169 +1,218 @@
 import React, {useEffect, useState} from 'react';
 import OrderCard from "./OrderCard";
-import "./css/OrderCard.css"
+import "./css/OrderCard.css";
+import "./css/Pagination.css";
 
-import { Link as NavLink } from "react-router-dom";
-import {Pagination, PaginationItem} from "@mui/material";
+import {Button, CloseButton, Col, Modal, Row} from 'react-bootstrap';
+import {http} from "../../utils/http";
 
 
 const Orders = (props) => {
     const [userId,setUserId] = useState(props?.userId)
     const [orders, setOrders] = useState([]);
     const [page, setPage] = useState(1);
-    const [pageQty, setPageQty] = useState(0);
+    const [nextPage, setNextPage] = useState(1);
+    const [showModal, setShowModal] = useState(false);
     {console.log(props)}
+    const [errorMessage, setErrorMessage] = useState('');
 
     useEffect(() => {
-        LoadOrders(userId,page)
-    }, [ page, props.history]);
+        LoadOrders(userId, nextPage);
+    }, [nextPage]);
 
-    function handleDeleteOrder(id){
+    useEffect(() => {
+        setPage(nextPage);
+    }, [orders])
+
+    async function handleDeleteOrder(id){
         // insert here delete request to server
         // replace below statements with loadorders with current page.
-        const updatedOrders = orders.filter(order => order.id!== id);
-        setOrders(updatedOrders);
+        const urlPath = "http://localhost:8080/api/orders";
+        const token = window.localStorage.getItem('accessToken');
+        const cHeaders = {
+            "Authorization" : `Bearer ${token}`,
+            "Content-Type": 'application/json'
+        }
+
+        try {
+            await fetch(urlPath + `/${id}`, {
+                method: 'DELETE',
+                headers: cHeaders
+            }) .then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => {
+                        // Извлечение сообщения об ошибке из текста ответа
+                        const errorMessage = text.match(/Order with id (\d+) not found/);
+                        if (errorMessage) {
+                            throw new Error(`Заказ с ID ${errorMessage[1]} не найден`);
+                        } else {
+                            throw new Error('Неизвестная ошибка');
+                        }
+                    });
+                }
+            });
+
+            const updatedOrders = orders.filter(order => order.id !== id);
+            if (updatedOrders.length === 0) {
+                if (page === 1) {
+                    let loaded = await LoadOrders(userId, page);
+                    if (loaded.filter(order => order.id !== id).length === 0) {
+                        setOrders([]);
+                    }
+                } else {
+                    setNextPage(page - 1);
+                }
+            } else {
+                await LoadOrders(userId, page);
+            }
+            setErrorMessage("")
+        } catch (error)
+        {
+            setErrorMessage(error.message)
+            setShowModal(true)
+        }
     }
 
-    function handleCancelOrder(id) {
+    async function handleCancelOrder(id) {
         const updatedOrders = orders.map(order =>
-            order.id === id? {...order, status: 'CANCELED' } : order
+            order.id === id ? {...order, status: 'CANCELLED' } : order
         );
-
-        setOrders(updatedOrders);
+        const updatedOrder = updatedOrders[updatedOrders.findIndex(order => order.id === id)];
+        
         //insert here request to server
+
+        const urlPath = "http://localhost:8080/api/orders";
+        const token = window.localStorage.getItem('accessToken');
+        const cHeaders = {
+            "Authorization" : `Bearer ${token}`,
+            "Content-Type": 'application/json'
+        }
+        try {
+            console.log(await fetch(urlPath, {
+                method: 'PUT',
+                headers: cHeaders,
+                body: JSON.stringify({id: updatedOrder.id, status: updatedOrder.status})
+            }).then(response => {
+                if (!response.ok) {
+                    return response.text().then(text => {
+                        throw new Error(text);
+                    });
+                }
+                return response.json();
+            }));
+            setNextPage(page);
+            setOrders(updatedOrders);
+            setErrorMessage("")
+        }
+        catch (error)
+        {
+            if(error.message === "")
+            {
+                setErrorMessage("Unexpected error")
+            }
+            setErrorMessage(error.message)
+            setShowModal(true)
+        }
+
     }
 
-    function LoadOrders(userId, page) {
+    async function LoadOrders(userId, pageToLoad) {
         // Предполагается, что здесь происходит асинхронная загрузка данных
         // Например, fetch запрос к API
         // Здесь мы просто симулируем загрузку данных
-        const orderItems = [
-            {
-                product:{
-                    id:1,
-                    title:"some product title 1",
-                    description:"some very very very very very very very huuuuuuuuuuuuuuuuuuuuuuuge description1",
-                    price:10,
-                    imageUrl:"/some/url.png"
-                },
-                count:2,
-            },
-            {
-                product:{
-                    id:2,
-                    title:"some product title 2",
-                    description:"some very very very very very very very huuuuuuuuuuuuuuuuuuuuuuuge description2",
-                    price:15,
-                    imageUrl:"/some/url.png"
-                },
-                count:1,
-            },
-            {
-                product:{
-                    id:3,
-                    title:"some product title 3",
-                    description:"some very very very very very very very huuuuuuuuuuuuuuuuuuuuuuuge description3",
-                    price:20,
-                    imageUrl:"/some/url.png"
-                },
-                count:5,
-            },
-            {
-                product:{
-                    id:15,
-                    title:"some product title 15",
-                    description:"some very very very very very very very huuuuuuuuuuuuuuuuuuuuuuuge description15",
-                    price:20,
-                    imageUrl:"/some/url.png"
-                },
-                count:1,
-            },
+        
+        // Это нужно убрать в секцию инициализации App
+        console.log("UserID:"+userId)
+        let urlPath = `/orders?pageNumber=${pageToLoad-1}&&pageSize=3`
+        if(userId!=null)
+        {
+            urlPath = `/orders?pageNumber=${pageToLoad-1}&&pageSize=3&&user=${userId}`
+        }
+        try {
+            let response = await http.get(urlPath);
+            const loadedOrders = await response.data;
+            if (loadedOrders.length != 0) setOrders(loadedOrders);
+            return loadedOrders;
+        }
+        catch (error)
+        {
+            if (error.response) {
 
-        ]
-
-        const loadedOrders = [
-            {
-                id: 1,
-                date:"22.02.1231",
-                status:"COMPLETED",
-                city:"CityName1",
-                street:"StreetName1",
-                apartmentNumber:12,
-                houseNumber:23,
-                price:100,
-                orderItems:orderItems,
-            },
-            {
-                id: 2,
-                date:"22.02.2022",
-                status:"PENDING",
-                city:"CityName2",
-                street:"StreetName2",
-                apartmentNumber:1234,
-                houseNumber:223,
-                price:200,
-                orderItems:orderItems,
-            },
-            {
-                id: 2,
-                date:"22.02.2012",
-                status:"COMPLETED",
-                city:"CityName3",
-                street:"StreetName3",
-                apartmentNumber:333,
-                houseNumber:33,
-                price:300,
-                orderItems:orderItems,
-            },
-        ];
-        setPageQty(3);
-        setOrders([loadedOrders[page - 1]]);
-       // setOrders([loadedOrders[0],loadedOrders[1],loadedOrders[2]]);
+                console.log(error.response.data)
+                setErrorMessage(error.response.data)
+                console.log(localStorage.getItem("refreshToken"))
+                setShowModal(true)
+            }
+        }
     }
 
     return (
+        <>
 
-        <div className="orders-container">
-            <div>
+            {orders.length > 0 ? (
+                <div className="orders-container">
+                    <div>
 
-                {orders.map((order) => (
-                    <OrderCard
-                        id={order.id}
-                        userRole="ADMIN"
-                        date = {order.date}
-                        status = {order.status}
-                        price = {order.price}
-                        city = {order.city}
-                        street = {order.street}
-                        houseNumber = {order.houseNumber}
-                        apartmentNumber = {order.apartmentNumber}
-                        orderItems = {order.orderItems}
-                        handleDelete = {()=>{handleDeleteOrder(order.id)}}
-                        handleCancel = {()=>{handleCancelOrder(order.id)}}
-                    >
-                    </OrderCard>
-                ))}
-                <div className="pagination-container">
-                {!!pageQty && (
-                    <Pagination
-                        count={pageQty}
-                        page={page}
-                        onChange={(_, num) => setPage(num)}
-                        showFirstButton
-                        showLastButton
-                        sx={{ marginY: 3, marginX: "auto" }}
-                        renderItem={(item) => (
-                            <PaginationItem
-                                component={NavLink}
-                                to={`/orders?page=${item.page}`}
-                                {...item}
-                            />
-                        )}
-                    />
-                )}
+                        {orders.map((order) => (
+                            <OrderCard
+                                id={order.id}
+                                userRole={localStorage.getItem("role")}
+                                date = {order.date}
+                                status = {order.status}
+                                price = {order.price}
+                                city = {order.city}
+                                street = {order.street}
+                                houseNumber = {order.houseNumber}
+                                apartmentNumber = {order.apartmentNumber}
+                                orderItems = {order.orderItems}
+                                handleDelete = {()=>{handleDeleteOrder(order.id)}}
+                                handleCancel = {()=>{handleCancelOrder(order.id)}}
+                            >
+                            </OrderCard>
+                        ))}
+                        <div className="pagination-container">
+                            <Row>
+                                <Col>
+                                    <Button className='btn-pagination' onClick={() => setNextPage(Math.max(page - 1, 1))}>&#60;</Button>
+                                </Col>  
+                                <Col>
+                                    <p className='page-info'>{page}</p>
+                                </Col>                          
+                                <Col>
+                                    <Button className='btn-pagination' onClick={() => setNextPage(page + 1)}>&#62;</Button>
+                                </Col>                        
+                            </Row>                     
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+            ) : (
+                <div className="cart-empty-container">
+                    <div className="cart-empty-span-container">
+                        <span>Orders history is empty</span>
+                    </div>
+                </div>
+            )
+            }
+            {console.log("Вывожу ошибку:"+errorMessage)}
+            <Modal show={showModal} centered>
+                <Modal.Header>
+                    <Modal.Title>Error</Modal.Title>
+                    <CloseButton onClick={()=>{
+                        setShowModal(false)
+                    }}/>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>{errorMessage}</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="warning" onClick={()=>{
+                        setShowModal(false)
+                    }}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+        </>
     );
 };
 
