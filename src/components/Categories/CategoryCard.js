@@ -45,7 +45,7 @@ function CategoryCard(props) {
 
       <Modal show={showDescription} centered>
         <Modal.Header>
-          <Modal.Title>Pizza Full Description</Modal.Title>
+          <Modal.Title>Category Full Description</Modal.Title>
           <CloseButton onClick={() => {
             setShowDescription(false)
           }}/>
@@ -55,6 +55,7 @@ function CategoryCard(props) {
             <Card style={{border: "none"}}>
               <Card.Body>
                 <Card.Title>Category</Card.Title>
+                <Card.Text>id: {category.id}</Card.Text>
                 <Card.Text>name: {category.name}</Card.Text>
               </Card.Body>
             </Card>
