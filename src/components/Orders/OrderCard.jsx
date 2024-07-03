@@ -45,18 +45,18 @@ function OrderCard(props) {
                     <div className="delimiter"></div>
                     <div className="order-card-buttons-container">
                         {}
-                        {!(props.status === "COMPLETED") && !(props.status === "CANCELED") &&(
+                        {!(props.status === "COMPLETED") && !(props.status === "CANCELLED") &&(
                         <>
                             <button onClick={props.handleCancel}>Отменить</button>
                         </>)
                         }
                         {}
-                        {props.userRole === 'ADMIN' && (
+                        {(props.userRole === "ADMIN") &&(
                             <>
                                 <button onClick={props.handleDelete}>Удалить</button>
                             </>
-                        )}
 
+                            )}
                         <button onClick={() => {setModalShow(true)}} > Детали</button>
                     </div>
                 </div>

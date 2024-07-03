@@ -1,9 +1,23 @@
 import React, {useEffect, useRef} from "react";
-import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Image, Row } from "react-bootstrap";
+import {
+    Button,
+    Card,
+    CardBody,
+    CardSubtitle,
+    CardText,
+    CardTitle,
+    CloseButton,
+    Col,
+    Image,
+    Modal,
+    Row
+} from "react-bootstrap";
 
 //import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/OrderItem.css'
 import {getCookie, setCookie} from "../../utils/cookie/cookieUtils";
+import {http} from "../../utils/http";
+
 
 
 class CardState {
@@ -16,19 +30,6 @@ class CardState {
     priceTotal;
     removeCallBack;
 
-
-    static loadCardState(id,removeCallback) {
-        const currentCart = JSON.parse(getCookie("cart") || "[]");
-        const existingItemIndex = currentCart.findIndex(item => item.id === id);
-        if(existingItemIndex !== -1)
-        {
-            const item  = currentCart[existingItemIndex];
-            //insert here loading product info by product id
-            return new CardState(item.id,"title","description",7.99,item.count,"imageUrl",removeCallback);
-        }
-
-    }
-
     constructor(id, title, description, priceForPiece, count, imageUrl,removeCallback) {
         this.id = id;
         this.imageUrl = imageUrl;
@@ -37,7 +38,6 @@ class CardState {
         this.priceForPiece = priceForPiece;
         this.count = count;
         this.priceTotal = this.count * this.priceForPiece;
-
         this.removeCallBack = removeCallback;
 
         this.changeCardState = this.changeCardState.bind(this);
@@ -54,7 +54,7 @@ class CardState {
             this.updateItemInCart(this.id,-1)
         }
         this.priceTotal = this.priceForPiece * this.count;
-        if(this.count == 0)
+        if(this.count === 0)
         {
             this.removeCallBack(-this.priceForPiece);
         }
@@ -75,17 +75,47 @@ class CardState {
         }
         setCookie("cart", JSON.stringify(currentCart), 7);
     }
-
-
     saveState() {
         // save state to repository
     }
 }
 
 function OrderItem(props) { // Removed TypeScript type annotation
-    const [cardState, setCardState] = React.useState(CardState.loadCardState(props.id,
-        (count)=>{props.onTotalChange(count);props.onRemoveFromCart()}));
+
+    const [cardState, setCardState] = React.useState(new CardState(0,"","",0,0,"",()=>{}));
     const prevTotalPriceRef = useRef(0);
+    const [errorMessage,setErrorMessage] = React.useState("");
+    const [showModal,setShowModal] = React.useState(false)
+
+
+    useEffect(() => {
+        async function fetchData() {
+            const currentCart = JSON.parse(getCookie("cart") || "[]");
+            const existingItemIndex = currentCart.findIndex(item => item.id === props.id);
+            if (existingItemIndex !== -1) {
+                const item = currentCart[existingItemIndex];
+                try {
+                    const response = await http.get(`/products/${props.id}`);
+                    //const response = await http.get(`/products/1`);
+                    const data = response.data;
+                    console.log(data.name+" "+data.description+" "+data.price)
+                    const state = new  CardState(props.id, data.name, data.description,data.price, item.count, "imageUrl", (count) => {
+                        props.onTotalChange(count);
+                        props.onRemoveFromCart();
+                    });
+                    setCardState(state);
+                    setErrorMessage("");
+                } catch (error) {
+                    if (error.response) {
+                        setErrorMessage(error.response.data)
+                        setShowModal(true)
+                    }
+                    // Обработка ошибки
+                }
+            }
+        }
+        fetchData();
+    }, []);
 
     useEffect(() => {
         if (prevTotalPriceRef.current!== cardState.priceTotal) {
@@ -100,8 +130,27 @@ function OrderItem(props) { // Removed TypeScript type annotation
 
 
     return (
+
         <Card  className="order-item">
             <CardBody>
+                <Modal show={showModal} centered>
+                    <Modal.Header>
+                        <Modal.Title>Error</Modal.Title>
+                        <CloseButton onClick={()=>{
+                            setShowModal(false)
+                        }}/>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <p>{errorMessage}</p>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="warning" onClick={()=>{
+                            setShowModal(false)
+                        }}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </Modal>
                 <Row>
                     <Col className="order-item-img-container">
                         <Image src={"assets/images/pizza_test.png"} className="order-item-img" ></Image>

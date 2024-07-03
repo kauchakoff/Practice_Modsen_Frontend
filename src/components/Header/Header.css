@@ -43,3 +43,48 @@
     text-wrap: nowrap;
     margin: 0;
 }
+
+.header-menu {
+    user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.header-menu p {
+    text-wrap: nowrap;
+    margin: 0;
+}
+
+.menu-trigger {
+  position: relative;
+  cursor: pointer;
+}
+
+.menu-trigger p {
+    color: orange;
+}
+
+.menu-list {
+  display: none;
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  background-color: transparent;
+}
+
+.menu-list li {
+  padding: 5px 12px;
+}
+
+.menu-list li:hover {
+    border-radius: 10px;
+    background-color: orange;
+}
+
+.menu-trigger:hover .menu-list {
+  display: block;
+}

@@ -13,6 +13,7 @@ const Cart = (props) => {
     function onTotalChange(count)
     {
         setTotalCost(prevTotalCost => prevTotalCost + count);
+        console.log("переданное число:"+count)
         setCartItems(JSON.parse(getCookie("cart") || '[]'))
     }
     function onRemoveFromCart(itemId) {
@@ -26,8 +27,8 @@ const Cart = (props) => {
     useEffect(()=>{
         const totalQuantity = Math.max(0,cartItems.reduce((acc, item) => acc + item.count, 0));
         console.log(totalCost)
-        updateHeader(totalQuantity,totalCost.toFixed(2))
-    },[totalCost,cartItems])
+        updateHeader(totalQuantity, totalCost.toFixed(2))
+    },[totalCost, cartItems])
 
     return (
        <>
@@ -43,7 +44,7 @@ const Cart = (props) => {
                        </ul>
                    </div>
                    <div className="form-container">
-                       <CartForm  totalPrice={totalCost.toFixed(2)}></CartForm>
+                       <CartForm totalPrice={totalCost.toFixed(2)} onFormSubmit={() => {setCartItems([]); setTotalCost(0);}}></CartForm>
                    </div>
                </div>
            ):(

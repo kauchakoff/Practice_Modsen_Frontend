@@ -19,17 +19,17 @@ const AppRouterProvider = () => {
     setUser(user);
   }, []);
 
+
   return (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout/>}>
-            <Route path="orders" element={<Orders/>}></Route>
-            <Route path="cart" element={<Cart/>}/>
-            <Route path="categories" element={<CategoryEditor/>}  />
-            <Route path="products" element={<Products/>}  />
-            <Route path="" element = {user ? <Products setUser={setUser} /> : <Navigate to="login"/>} />
-            <Route path="login" element = {user ? <Navigate to="" /> : <Login setUser={setUser} />}/>
-            <Route path="register" element = {user ? <Navigate to="/" /> : <Register setUser={setUser} />}/>
+            <Route path="orders" element={checkAuthStatus() ?<Orders userId={localStorage.getItem("userId")}/>: <Navigate to="/login"/>}/>
+            <Route path="cart" element={checkAuthStatus() ? <Cart/> : <Navigate to="/login"/>}/>
+            <Route path="categories" element={checkAuthStatus() ? <CategoryEditor/> : <Navigate to="/login"/>}  />
+            <Route path="products" element = {checkAuthStatus() ? <Products /> : <Navigate to="/login"/>} />
+            <Route path="login" element = {checkAuthStatus() ? <Navigate to="/products" /> : <Login setUser={(user)=> setUser(user) }/>}/>
+            <Route path="register" element = {checkAuthStatus() ? <Navigate to="/products" /> : <Register  setUser={(user)=> setUser(user) } />}/>
           </Route>
         </Routes>
       </BrowserRouter>

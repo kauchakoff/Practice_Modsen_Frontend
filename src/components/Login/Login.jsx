@@ -11,12 +11,12 @@ const Login = ({ setUser }) => {
   const history = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     try {
-      const user = login(email, password);
-      setUser(user);
-      history.push('/');
+        const user = await login(email, password);
+        setUser(await  user)
+        console.log("email:"+email)
     } catch (err) {
+        console.log(err);
       setError('Invalid email or password');
     }
   };
@@ -29,7 +29,7 @@ const Login = ({ setUser }) => {
         setEmail={setEmail}
         password={password}
         setPassword={setPassword}
-        onSubmit={handleSubmit}
+        onSubmit={()=>handleSubmit()}
       >
 
       </Form>
