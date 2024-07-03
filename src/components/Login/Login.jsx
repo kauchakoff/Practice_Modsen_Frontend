@@ -13,7 +13,7 @@ const Login = ({ setUser }) => {
   const handleSubmit = async (e) => {
     try {
         const user = await login(email, password);
-        setUser(await  user)
+        setUser(await user)
         console.log("email:"+email)
     } catch (err) {
         console.log(err);

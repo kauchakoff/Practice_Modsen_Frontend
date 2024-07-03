@@ -34,8 +34,9 @@ function CategoryEditor() {
       sortOrder: "desc",
     }
     getAllCategories(requestData).then((value) => {
-      setCategoriesArray(value);
-
+      if(value !== null) {
+        setCategoriesArray(value);
+      }
     });
   }, [nextPage]);
 

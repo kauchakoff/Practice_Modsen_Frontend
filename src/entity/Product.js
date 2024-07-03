@@ -17,9 +17,9 @@ class Product {
         this.caloricValue = caloricValue;
     }*/
 
-    id = uuid.v4()
+    id = 1;
 
-    category = 0;
+    categoryId = 1;
 
     name = "Pizza Peperoni";
 

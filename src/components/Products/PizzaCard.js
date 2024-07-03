@@ -1,21 +1,26 @@
 import Card from "react-bootstrap/Card";
 import {CloseButton, ListGroup, Modal} from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import React, {useEffect, useRef} from "react";
+import React, {useEffect, useState} from "react";
 import Image from 'react-bootstrap/Image';
 import logo from "../../resources/pizza_test.png";
 import {getCookie, setCookie} from "../../utils/cookieUtils";
-import {execute} from "bootstrap/js/src/util";
-import {updateCartButton} from "./Products";
+import {getErrorMessage, updateCartButton} from "./Products";
+import Form from "react-bootstrap/Form";
+import {useForm} from "react-hook-form";
+import {updateProductDB} from "../../utils/db/productUtils";
+import ErrorMessage from "./ErrorMessage";
 
 
 function PizzaCard(props) {
 
     const {product} = props;
     const [showDescription,setShowDescription] = React.useState(false);
-
-    //this state variable used for re-rendering purpose only
+    const [showEditWindow,setShowEditWindow] = React.useState(false);
     const [isInCart, setIsInCart] = React.useState(false);
+    const [showError, setShowError] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+    const [errorData, setErrorData] = useState("");
 
     let [count, setCount] = React.useState(1);
 
@@ -23,7 +28,43 @@ function PizzaCard(props) {
         isExistInCart();
     }, []);
 
-    //const target = useRef(null);
+    const {
+        register,
+        handleSubmit,
+        setValue,
+        reset,
+        formState: { errors },
+        setFocus,
+    } = useForm();
+
+
+    async function updateProduct(event){
+        handleSubmit(submitHandler(event,product));
+        event.preventDefault();
+        setShowEditWindow(false);
+        reset();
+        try {
+            await updateProductDB(product);
+        }catch (error){
+            setShowEditWindow(false);
+            setErrorMessage(error.message);
+            setErrorData(error.response.data);
+            setShowError(true);
+        }
+    }
+
+    const submitHandler = (data,product) => {
+        const elements =  data.target.elements;
+        product.name = elements.name.value;
+        product.categoryId = elements.category.value;
+        product.ingredients = elements.ingredients.value;
+        product.price = elements.price.value;
+        product.weight = elements.weight.value;
+        product.description = elements.description.value;
+        product.caloricValue = elements.caloricValue.value;
+        data.preventDefault();
+    }
+
 
     function addInCart() {
         const currentCart = JSON.parse(getCookie("cart") || "[]")
@@ -32,6 +73,7 @@ function PizzaCard(props) {
         setIsInCart(true);
         updateCartButton();
     }
+
     function removeFromCart() {
         let currentCart = JSON.parse(getCookie("cart") || "[]");
         currentCart = currentCart.filter(item => item.id !== product.id);
@@ -41,6 +83,7 @@ function PizzaCard(props) {
         updateCartButton();
 
     }
+
     function increaseCount() {
         const currentCart = JSON.parse(getCookie("cart") || "[]");
         const existingItemIndex = currentCart.findIndex(item => item.id === product.id);
@@ -50,6 +93,7 @@ function PizzaCard(props) {
         updateCartButton();
 
     }
+
     function decreaseCount() {
         if(count > 1) {
             const currentCart = JSON.parse(getCookie("cart") || "[]");
@@ -80,10 +124,6 @@ function PizzaCard(props) {
         }
 
     }
-
-
-
-
 
     return (
         <>
@@ -117,9 +157,7 @@ function PizzaCard(props) {
              </Card.Body>
 
              {
-                 // isInCart is only for re-rendering,logic is based on isProductInCart value
                  !(isInCart)
-
                  ? (
                  <ListGroup horizontal={true}
                             style={{justifyContent: "space-between",
@@ -170,6 +208,20 @@ function PizzaCard(props) {
                  </ListGroup>)
              }
          </Card>
+         { localStorage.getItem("role") === "[ADMIN]" &&
+            <ListGroup horizontal style={{justifyContent:"space-around"}}>
+                <Card.Text style={{
+                    fontWeight: "bold",
+                    fontSize: 22,
+                    margin: 0
+                }}>Edit product:</Card.Text>
+                <Button variant={"primary"}
+                        style={{margin: 0}}
+                        onClick={()=>{
+                            setShowEditWindow(true);
+                        }}>Edit</Button>
+            </ListGroup>
+         }
 
             <Modal show={showDescription} centered>
                 <Modal.Header>
@@ -202,6 +254,178 @@ function PizzaCard(props) {
                     </Button>
                 </Modal.Footer>
             </Modal>
+
+
+
+
+
+            <Modal show={showEditWindow} centered>
+                <form onSubmit={(event)=>{
+                    updateProduct(event);
+                }}>
+                    <Modal.Header>
+                        <Modal.Title>Product Editor</Modal.Title>
+                        <CloseButton onClick={()=>{
+                            setShowEditWindow(false);
+                            reset();
+                        }}/>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <Form.Group>
+                            <Form.Label>Name</Form.Label>
+                            <Form.Control type="text"
+                                          placeholder="Enter product name"
+                                          name="name"
+                                          {...register("name",{required: true, minLength: 2, maxLength: 200})}
+                                          defaultValue={product.name}
+                                          onChange={(event)=>{
+                                              setValue("name",event.target.value,{shouldValidate: true});
+                                          }}
+                                          onFocus={(event)=>{
+                                              setFocus("name",{shouldValidate: true});
+                                          }}>
+                            </Form.Control>
+                            {errors.name &&
+                                <ErrorMessage message={getErrorMessage(errors.name.type,"name")} />
+                            }
+
+                            <Form.Label>Related Category</Form.Label>
+                            <Form.Control type="text"
+                                          placeholder="Enter related category id"
+                                          name="category"
+                                          {...register("category",{required: true, min: 1})}
+                                          defaultValue={product.categoryId}
+                                          onChange={(event)=>{
+                                              setValue("category",event.target.value,{shouldValidate: true});
+                                          }}
+                                          onFocus={(event)=>{
+                                              setFocus("category",{shouldValidate: true});
+                                          }}>
+                            </Form.Control>
+                            {errors.category &&
+                                <ErrorMessage message={getErrorMessage(errors.category.type,"category")} />
+                            }
+
+                            <Form.Label>Ingredients(separate by comma+space)</Form.Label>
+                            <Form.Control type="text"
+                                          placeholder="Enter product ingridients"
+                                          name="ingredients"
+                                          {...register("ingredients")}
+                                          defaultValue={product.ingredients}
+                                          onChange={(event)=>{
+                                              setValue("ingredients",event.target.value,{shouldValidate: true});
+                                          }}
+                                          onFocus={(event)=>{
+                                              setFocus("ingredients",{shouldValidate: true});
+                                          }}>
+                            </Form.Control>
+                            {errors.ingredients &&
+                                <ErrorMessage message={getErrorMessage(errors.ingredients.type,"ingredients")} />
+                            }
+
+                            <Form.Label>Price(USD)</Form.Label>
+                            <Form.Control type="text"
+                                          placeholder="Enter price"
+                                          name="price"
+                                          {...register("price",{required: true, minLength: 0})}
+                                          defaultValue={product.price}
+                                          onChange={(event)=>{
+                                              setValue("price",event.target.value,{shouldValidate: true});
+                                          }}
+                                          onFocus={(event)=>{
+                                              setFocus("price",{shouldValidate: true});
+                                          }}>
+                            </Form.Control>
+                            {errors.price &&
+                                <ErrorMessage message={getErrorMessage(errors.price.type,"price")} />
+                            }
+
+                            <Form.Label>Weight(grams)</Form.Label>
+                            <Form.Control type="text"
+                                          placeholder="Enter weight"
+                                          name="weight"
+                                          {...register("weight",{required: true, min: 0})}
+                                          defaultValue={product.weight}
+                                          onChange={(event)=>{
+                                              setValue("weight",event.target.value,{shouldValidate: true});
+                                          }}
+                                          onFocus={(event)=>{
+                                              setFocus("weight",{shouldValidate: true});
+                                          }}>
+                            </Form.Control>
+                            {errors.weight &&
+                                <ErrorMessage message={getErrorMessage(errors.weight.type,"weight")} />
+                            }
+
+                            <Form.Label>Description</Form.Label>
+                            <Form.Control type="text"
+                                          placeholder="Enter description for product"
+                                          name="description"
+                                          {...register("description",{required: true, min: 0})}
+                                          defaultValue={product.description}
+                                          onChange={(event)=>{
+                                              setValue("description",event.target.value,{shouldValidate: true});
+                                          }}
+                                          onFocus={(event)=>{
+                                              setFocus("description",{shouldValidate: true});
+                                          }}>
+                            </Form.Control>
+                            {errors.description &&
+                                <ErrorMessage message={getErrorMessage(errors.description.type,"description")} />
+                            }
+
+                            <Form.Label>Caloric value(kcal)</Form.Label>
+                            <Form.Control type="text"
+                                          placeholder="Enter caloric value"
+                                          name="caloricValue"
+                                          {...register("caloricValue")}
+                                          defaultValue={product.caloricValue}
+                                          onChange={(event)=>{
+                                              setValue("caloricValue",event.target.value,{shouldValidate: true});
+                                          }}
+                                          onFocus={(event)=>{
+                                              setFocus("caloricValue",{shouldValidate: true});
+                                          }}>
+                            </Form.Control>
+                            {errors.caloricValue &&
+                                <ErrorMessage message={getErrorMessage(errors.caloricValue.type,"caloricValue")} />
+                            }
+                        </Form.Group>
+
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <Button variant="primary" disabled={Object.keys(errors).filter(key => errors[key]).length !== 0} type={"submit"}>
+                            Save
+                        </Button>
+                        <Button variant="secondary" onClick={()=>{
+                            setShowEditWindow(false);
+                            reset();
+                        }}>
+                            Close
+                        </Button>
+                    </Modal.Footer>
+                </form>
+            </Modal>
+            <Modal show={showError} centered>
+                <Modal.Header>
+                    <Modal.Title>An error occurred!</Modal.Title>
+                    <CloseButton onClick={()=>{
+                        setShowError(false);
+                    }}/>
+                </Modal.Header>
+                <Modal.Body>
+                    <p>{errorMessage}</p>
+                    <p>{errorData}</p>
+                </Modal.Body>
+                <Modal.Footer>
+                    <Button variant="warning" onClick={()=>{
+                        setShowError(false);
+                    }}>
+                        Close
+                    </Button>
+                </Modal.Footer>
+            </Modal>
+
         </>
     );
 }
