@@ -1,0 +1,11 @@
+.component {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.component-hidden {
+    opacity: 0;
+}
+
+.component-visible {
+    opacity: 1;
+}
