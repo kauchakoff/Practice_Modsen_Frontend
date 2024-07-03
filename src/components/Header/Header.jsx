@@ -6,9 +6,11 @@ import Logo from './Logo';
 import './Header.css';
 import CartButton from './CartButton';
 import OrdersHistoryButton from './OrdersHistoryButton';
-import {useRef} from "react";
+import {useEffect, useRef, useState} from "react";
 import ViewCategoryEditorButton from "../Categories/ViewCategoryEditorButton";
 import {logout} from "../../utils/auth/auth";
+import Category from "../../entity/Category";
+import {getAllCategories} from "../Categories/CategoryAction";
 
 export function updateHeader  (itemsCount, totalCost)  {
     // Здесь ваш код для обновления header
@@ -21,6 +23,36 @@ export function updateHeader  (itemsCount, totalCost)  {
 
 function Header() {
 
+  const itemsPerPage = 10;
+  const [page, setPage] = useState(1);
+
+  const defaultAllCategoryId = -1;
+  const defaultAllCategoryName = "ALL";
+  const defaultCategory = new Category()
+  defaultCategory.id = defaultAllCategoryId;
+  defaultCategory.name = defaultAllCategoryName;
+
+  const [categoriesArray, setCategoriesArray] = useState([defaultCategory]);
+  let [selectedCategoryId, setSelectedCategoryId] = useState(defaultAllCategoryId)
+
+  useEffect(() => {
+    const requestData = {
+      pageNumber: page,
+      pageSize: itemsPerPage,
+      sortBy: "id",
+      sortOrder: "desc",
+    }
+    getAllCategories(requestData).then((value) => {
+      setCategoriesArray([...categoriesArray, ...value]);
+      if (value.length > 0) {
+        setPage(page + 1);
+      }
+    });
+  }, [page]);
+
+  let handleSelectedCategoryChange = (e) => {
+    setSelectedCategoryId(e.target.value)
+  }
 
     return (
         <header>
@@ -48,8 +80,16 @@ function Header() {
                             </div>
                         </div>
                     </Col>
-                </Col>            
-            </Row>    
+                </Col>
+            </Row>
+          <Row className='header-container'>
+            <select value={selectedCategoryId} onChange={handleSelectedCategoryChange}>
+              {categoriesArray.map((category) => <option
+                                                         value={category.id}>{category.name}</option>)}
+            </select>
+            <p>{`selectedCategoryId = ${selectedCategoryId}`}</p>
+          </Row>
+
         </header>
     );
 }
