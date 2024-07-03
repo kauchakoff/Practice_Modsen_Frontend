@@ -1,4 +1,6 @@
 import React, {useEffect, useRef} from "react";
+import Logo from "../../assets/pizza_test.png"
+
 import {
     Button,
     Card,
@@ -110,7 +112,6 @@ function OrderItem(props) { // Removed TypeScript type annotation
                         setErrorMessage(error.response.data)
                         setShowModal(true)
                     }
-                    // Обработка ошибки
                 }
             }
         }
@@ -153,7 +154,7 @@ function OrderItem(props) { // Removed TypeScript type annotation
                 </Modal>
                 <Row>
                     <Col className="order-item-img-container">
-                        <Image src={"assets/images/pizza_test.png"} className="order-item-img" ></Image>
+                        <Image src={Logo} className="order-item-img" ></Image>
                     </Col>
                     <Col className="order-item-info">
                         <Row>

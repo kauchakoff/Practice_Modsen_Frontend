@@ -33,25 +33,9 @@ const Orders = (props) => {
             "Authorization" : `Bearer ${token}`,
             "Content-Type": 'application/json'
         }
-
+        let response;
         try {
-            await fetch(urlPath + `/${id}`, {
-                method: 'DELETE',
-                headers: cHeaders
-            }) .then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        // Извлечение сообщения об ошибке из текста ответа
-                        const errorMessage = text.match(/Order with id (\d+) not found/);
-                        if (errorMessage) {
-                            throw new Error(`Заказ с ID ${errorMessage[1]} не найден`);
-                        } else {
-                            throw new Error('Неизвестная ошибка');
-                        }
-                    });
-                }
-            });
-
+            response  =  await  http.delete(urlPath + `/${id}`)
             const updatedOrders = orders.filter(order => order.id !== id);
             if (updatedOrders.length === 0) {
                 if (page === 1) {
@@ -63,12 +47,22 @@ const Orders = (props) => {
                     setNextPage(page - 1);
                 }
             } else {
-                await LoadOrders(userId, page);
+                if (nextPage !== page) {
+                    setNextPage(page);
+                } else await LoadOrders(userId, page);
             }
             setErrorMessage("")
         } catch (error)
         {
-            setErrorMessage(error.message)
+            response.text().then(text => {
+                // Извлечение сообщения об ошибке из текста ответа
+                const errorMessage = text.match(/Order with id (\d+) not found/);
+                if (errorMessage) {
+                    setErrorMessage(error.message)
+                } else {
+                    setErrorMessage("Unexpected error")
+                }
+            });
             setShowModal(true)
         }
     }
@@ -78,28 +72,19 @@ const Orders = (props) => {
             order.id === id ? {...order, status: 'CANCELLED' } : order
         );
         const updatedOrder = updatedOrders[updatedOrders.findIndex(order => order.id === id)];
-        
-        //insert here request to server
 
         const urlPath = "http://localhost:8080/api/orders";
-        const token = window.localStorage.getItem('accessToken');
-        const cHeaders = {
-            "Authorization" : `Bearer ${token}`,
-            "Content-Type": 'application/json'
-        }
         try {
-            console.log(await fetch(urlPath, {
-                method: 'PUT',
-                headers: cHeaders,
-                body: JSON.stringify({id: updatedOrder.id, status: updatedOrder.status})
-            }).then(response => {
-                if (!response.ok) {
-                    return response.text().then(text => {
-                        throw new Error(text);
-                    });
-                }
-                return response.json();
-            }));
+            const response = await http.put(urlPath,{
+                id: updatedOrder.id,
+                status: updatedOrder.status,
+                houseNumber:updatedOrder.houseNumber,
+                street:updatedOrder.street,
+                price:updatedOrder.price,
+                creationDate:updatedOrder.creationDate,
+                orderItems:updatedOrder.orderItems,
+                city:updatedOrder.city,
+            })
             setNextPage(page);
             setOrders(updatedOrders);
             setErrorMessage("")
@@ -117,14 +102,9 @@ const Orders = (props) => {
     }
 
     async function LoadOrders(userId, pageToLoad) {
-        // Предполагается, что здесь происходит асинхронная загрузка данных
-        // Например, fetch запрос к API
-        // Здесь мы просто симулируем загрузку данных
-        
-        // Это нужно убрать в секцию инициализации App
         console.log("UserID:"+userId)
         let urlPath = `/orders?pageNumber=${pageToLoad-1}&&pageSize=3`
-        if(userId!=null)
+        if(userId !== undefined && userId !== null)
         {
             urlPath = `/orders?pageNumber=${pageToLoad-1}&&pageSize=3&&user=${userId}`
         }
@@ -157,7 +137,7 @@ const Orders = (props) => {
                             <OrderCard
                                 id={order.id}
                                 userRole={localStorage.getItem("role")}
-                                date = {order.date}
+                                date = {order.creationDate}
                                 status = {order.status}
                                 price = {order.price}
                                 city = {order.city}

@@ -2,9 +2,10 @@ import React from 'react';
 import {useState} from "react";
 import "./css/cartForm.css"
 import { useForm, SubmitHandler } from "react-hook-form"
-import {getCookie, setCookie} from "../../utils/cookieUtils";
+import {getCookie, setCookie} from "../../utils/cookie/cookieUtils";
 
 import {Button, CloseButton, Modal} from "react-bootstrap";
+import {http} from "../../utils/http";
 
 
 const CartForm = ({totalPrice, onFormSubmit}) => {
@@ -33,28 +34,9 @@ const CartForm = ({totalPrice, onFormSubmit}) => {
         }
         console.log("Данные заказа :"+orderData)
         try {
-            // const response = await http.post(`/orders`,orderData);
-            // console.log(response);
+
             const urlPath = "http://localhost:8080/api/orders";
-            const token = window.localStorage.getItem('accessToken');
-            const cHeaders = {
-                "Authorization" : `Bearer ${token}`,
-                "Content-Type": 'application/json',
-                "Accept": 'application/json'
-            }
-
-            console.log(await fetch(urlPath, {
-                method: 'POST',
-                headers: cHeaders,
-                body: JSON.stringify(orderData)
-            }).then(response => {
-                    if(!response.ok) {
-                // Извлечение сообщения об ошибке из текста ответа
-                    throw new Error('An error occurred while placing your order. Please reshape.');
-                    }
-                }
-            ));
-
+            const response = await http.post(urlPath,orderData);;
             setCookie("cart", "[]");
             setErrorMessage('')
             onFormSubmit();

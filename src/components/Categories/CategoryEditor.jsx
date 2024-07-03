@@ -8,6 +8,7 @@ import {useForm} from "react-hook-form";
 import Category from "../../entity/Category";
 import {addNewCategory, deleteCategory, getAllCategories, updateCategory} from "./CategoryAction";
 import CategoryErrorMessage from "./CategoryErrorMessage";
+import {getProductsDB} from "../../utils/db/productUtils";
 
 
 function CategoryEditor() {
@@ -24,6 +25,7 @@ function CategoryEditor() {
   const [removeIndex, setRemoveIndex] = React.useState(0);
   const [showEditWindow, setShowEditWindow] = React.useState(false);
   const [showCreationWindow, setShowCreationWindow] = React.useState(false);
+  const [isNextPageExists, setIsNextPageExists] = useState(isPageExists(nextPage + 1));
 
 
   useEffect(() => {
@@ -44,6 +46,13 @@ function CategoryEditor() {
     setPage(nextPage);
   }, [categoriesArray])
 
+  useEffect(() => {
+    async function updatePagination() {
+      setIsNextPageExists(await isPageExists(nextPage + 1));
+    }
+    updatePagination();
+  }, [nextPage]);
+
   const {
     register,
     handleSubmit,
@@ -58,256 +67,301 @@ function CategoryEditor() {
     data.preventDefault();
   };
 
+  async function setNextCategoryPage(page){
+    let categories;
+    const requestData = {
+      pageNumber: page,
+      pageSize: itemsPerPage,
+      sortBy: "id",
+      sortOrder: "asc",
+    }
+    categories = await getAllCategories(requestData);
+    setCategoriesArray(categories);
+  }
+
+  async function isPageExists(page){
+    let categories;
+    const requestData = {
+      pageNumber: page,
+      pageSize: itemsPerPage,
+      sortBy: "id",
+      sortOrder: "asc",
+    }
+    categories = await getAllCategories(requestData);
+
+    return categories.length !== 0;
+  }
+
+
+
   return (
-    <>
-      <div className="pagination-container">
-        <Row>
-          <Col>
-            <Button className='btn-pagination' onClick={() => setNextPage(Math.max(page - 1, 1))}>&#60;</Button>
-          </Col>
-          <Col>
-            <p className='page-info'>{page}</p>
-          </Col>
-          <Col>
-            <Button className='btn-pagination' onClick={() => setNextPage(page + 1)}>&#62;</Button>
-          </Col>
-        </Row>
-      </div>
-      <Grid container spacing={0} columns={{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}}>
-        {categoriesArray.length > 0 && categoriesArray.map((item, index) => (
+      <>
+        <Grid container spacing={0} columns={{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}}>
+          {categoriesArray.length > 0 && categoriesArray.map((item, index) => (
+              <Grid item xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
+                <CategoryCard
+                    product={item}/>
+                <ListGroup horizontal style={{justifyContent: "space-around"}}>
+                  <Button variant={"primary"}
+                          style={{margin: 0}}
+                          onClick={() => {
+                            setObjectIndex(index);
+                            setValue("name", item.name);
+                            setShowEditWindow(true);
+                          }}>Edit</Button>
+                  <Button variant={"danger"}
+                          style={{margin: 0}}
+                          onClick={() => {
+                            setRemoveIndex(index);
+                            setShowDeleteConfirmation(true);
+                          }}>Delete</Button>
+                </ListGroup>
+              </Grid>
+
+          ))}
           <Grid item xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
-            <CategoryCard
-              product={item}/>
-            <ListGroup horizontal style={{justifyContent: "space-around"}}>
-              <Button variant={"primary"}
-                      style={{margin: 0}}
-                      onClick={() => {
-                        setObjectIndex(index);
-                        setValue("name", item.name);
-                        setShowEditWindow(true);
-                      }}>Edit</Button>
-              <Button variant={"danger"}
-                      style={{margin: 0}}
-                      onClick={() => {
-                        setRemoveIndex(index);
-                        setShowDeleteConfirmation(true);
-                      }}>Delete</Button>
-            </ListGroup>
+            <Card style={{
+
+
+              margin: 5,
+              display: "grid",
+              placeItems: "center"
+            }}>
+              <Card.Body>
+                <Button variant={"primary"}
+                        style={{
+                          display: "flex",
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          paddingBottom: 15,
+                          fontSize: 32,
+                          fontWeight: 'bold',
+                          width: 50,
+                          height: 50,
+                          borderRadius: 100
+                        }}
+                        onClick={() => {
+                          const category = new Category();
+                          setValue("name", category.name);
+                          setShowCreationWindow(true);
+                        }}>+</Button>
+              </Card.Body>
+            </Card>
           </Grid>
-
-        ))}
-        <Grid item xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
-          <Card style={{
-
-
-            margin: 5,
-            display: "grid",
-            placeItems: "center"
-          }}>
-            <Card.Body>
-              <Button variant={"primary"}
-                      style={{
-                        display: "flex",
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        paddingBottom: 15,
-                        fontSize: 32,
-                        fontWeight: 'bold',
-                        width: 50,
-                        height: 50,
-                        borderRadius: 100
-                      }}
-                      onClick={() => {
-                        const category = new Category();
-                        setValue("name", category.name);
-                        setShowCreationWindow(true);
-                      }}>+</Button>
-            </Card.Body>
-          </Card>
         </Grid>
-      </Grid>
+
+        <div className="pagination-container">
+          <Row>
+            <Col>
+              <Button className='btn-pagination' disabled={nextPage === 1}
+                      onClick={async () => {
+                        try {
+                          setNextCategoryPage(Math.max(nextPage - 1, 1));
+                          setIsNextPageExists(await isPageExists(Math.max(nextPage - 1, 1) + 2));
+                          setNextPage(Math.max(nextPage - 1, 1));
+                        } catch (error) {
+                          console.log(error);
+                        }
+                      }}>&#60;</Button>
+            </Col>
+            <Col>
+              <p className='page-info'>{nextPage}</p>
+            </Col>
+            <Col>
+              <Button className='btn-pagination' disabled={!isNextPageExists} onClick={async () => {
+                try {
+                  setNextCategoryPage(page + 1);
+                  setIsNextPageExists(await isPageExists(page + 2));
+                  setNextPage(nextPage + 1);
+                } catch (error) {
+                  console.log(error);
+                }
+              }}>&#62;</Button>
+            </Col>
+          </Row>
+        </div>
 
 
-      <Modal show={showDeleteConfirmation} centered>
-        <Modal.Header>
-          <Modal.Title>Are you sure to delete?</Modal.Title>
-          <CloseButton onClick={() => {
-            setShowDeleteConfirmation(false)
-          }}/>
-        </Modal.Header>
-        <Modal.Body>
-          <p>You are deleting product from products list. Operation also removes product from database and it's
-            impossible to undo it.</p>
+        <Modal show={showDeleteConfirmation} centered>
+          <Modal.Header>
+            <Modal.Title>Are you sure to delete?</Modal.Title>
+            <CloseButton onClick={() => {
+              setShowDeleteConfirmation(false)
+            }}/>
+          </Modal.Header>
+          <Modal.Body>
+            <p>You are deleting product from products list. Operation also removes product from database and it's
+              impossible to undo it.</p>
 
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="danger" onClick={() => {
-            const removedElement = categoriesArray.filter((element, currentIndex) =>
-              removeIndex === currentIndex);
-            const p = deleteCategory(removedElement[0].id);
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="danger" onClick={() => {
+              const removedElement = categoriesArray.filter((element, currentIndex) =>
+                  removeIndex === currentIndex);
+              const p = deleteCategory(removedElement[0].id);
+              p.then(data => {
+                const changedProductsArray = categoriesArray.filter((element, currentIndex) =>
+                    removeIndex !== currentIndex);
+                setObjectIndex(changedProductsArray.length - 1);
+                setCategoriesArray(changedProductsArray);
+                if (changedProductsArray.length === 0) {
+                  if (page > 1) {
+                    setNextPage(page - 1);
+                  }
+                } else {
+                  const requestData = {
+                    pageNumber: page,
+                    pageSize: itemsPerPage,
+                    sortBy: "id",
+                    sortOrder: "desc",
+                  }
+                  getAllCategories(requestData).then((value) => {
+                    setCategoriesArray(value);
+
+                  });
+                }
+
+              })
+              setShowDeleteConfirmation(false)
+              //place to perform back-end delete process
+            }}>
+              Delete
+            </Button>
+            <Button variant="warning" onClick={() => {
+              setShowDeleteConfirmation(false)
+            }}>
+              Cancel
+            </Button>
+          </Modal.Footer>
+        </Modal>
+
+
+        <Modal show={showEditWindow} centered>
+          <form onSubmit={(event) => {
+            const editedCategory = categoriesArray[objectIndex]
+            handleSubmit(handleSave(event, editedCategory));
+            const p = updateCategory(editedCategory.id, editedCategory)
             p.then(data => {
-              const changedProductsArray = categoriesArray.filter((element, currentIndex) =>
-                removeIndex !== currentIndex);
-              setObjectIndex(changedProductsArray.length - 1);
-              setCategoriesArray(changedProductsArray);
-              if (changedProductsArray.length === 0) {
-                if (page > 1) {
-                  setNextPage(page - 1);
-                }
-              } else {
-                const requestData = {
-                  pageNumber: page,
-                  pageSize: itemsPerPage,
-                  sortBy: "id",
-                  sortOrder: "desc",
-                }
-                getAllCategories(requestData).then((value) => {
-                  setCategoriesArray(value);
-
-                });
-              }
-
+              categoriesArray[objectIndex] = editedCategory;
             })
-            setShowDeleteConfirmation(false)
-            //place to perform back-end delete process
+
+            event.preventDefault();
+            setShowEditWindow(false);
+            reset();
+
           }}>
-            Delete
-          </Button>
-          <Button variant="warning" onClick={() => {
-            setShowDeleteConfirmation(false)
+            <Modal.Header>
+              <Modal.Title>Product Editor</Modal.Title>
+              <CloseButton onClick={() => {
+
+                setShowEditWindow(false);
+                reset();
+              }}/>
+            </Modal.Header>
+            <Modal.Body>
+              <Form.Group>
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text"
+                              placeholder="Enter category name"
+                              name="name"
+                              {...register("name", {required: true, minLength: 2, maxLength: 50})}
+                              defaultValue={typeof categoriesArray[objectIndex] !== 'undefined' ? categoriesArray[objectIndex].name : ''}
+                              onChange={(e) => {
+                                setValue('name', e.target.value, {shouldValidate: true});
+                              }}
+                              onFocus={(e) => {
+                                setValue('name', e.target.value, {shouldValidate: true});
+                              }}>
+                </Form.Control>
+                {errors.name && (
+                    <CategoryErrorMessage message={getErrorMessage(errors.name.type, "name")}/>
+                )}
+
+              </Form.Group>
+
+            </Modal.Body>
+            <Modal.Footer>
+              <Button disabled={errors.name} variant="primary" type={"submit"}>
+                Save
+              </Button>
+              <Button variant="secondary" onClick={() => {
+                setShowEditWindow(false);
+                reset();
+              }}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </form>
+        </Modal>
+
+        <Modal show={showCreationWindow} centered>
+          <form onSubmit={(event) => {
+            const categoryToAdd = new Category();
+            categoryToAdd.id = 1
+            handleSubmit(handleSave(event, categoryToAdd));
+
+            const p = addNewCategory(categoryToAdd);
+            p.then(data => {
+              categoryToAdd.id = data.id
+              if (categoriesArray.length === itemsPerPage) {
+                setNextPage(page + 1);
+              } else {
+                const arrayWithNewCategory = [...categoriesArray, categoryToAdd];
+                setCategoriesArray(arrayWithNewCategory);
+                setObjectIndex(categoriesArray.length);
+              }
+            });
+
+            event.preventDefault();
+            setShowCreationWindow(false);
+            reset();
+
           }}>
-            Cancel
-          </Button>
-        </Modal.Footer>
-      </Modal>
+            <Modal.Header>
+              <Modal.Title>Product Creator</Modal.Title>
+              <CloseButton onClick={() => {
 
+                setShowCreationWindow(false);
+                reset();
+              }}/>
+            </Modal.Header>
+            <Modal.Body>
+              <Form.Group>
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text"
+                              placeholder="Enter category name"
+                              name="name"
+                              {...register("name", {required: true, minLength: 2, maxLength: 50})}
+                              defaultValue={typeof categoriesArray[objectIndex] !== 'undefined' ? categoriesArray[objectIndex].name : ''}
+                              onChange={(e) => {
+                                setValue('name', e.target.value, {shouldValidate: true});
+                              }}
+                              onFocus={(e) => {
+                                setValue('name', e.target.value, {shouldValidate: true});
+                              }}>
+                </Form.Control>
+                {errors.name && (
+                    <CategoryErrorMessage message={getErrorMessage(errors.name.type, "name")}/>
+                )}
 
-      <Modal show={showEditWindow} centered>
-        <form onSubmit={(event) => {
-          const editedCategory = categoriesArray[objectIndex]
-          handleSubmit(handleSave(event, editedCategory));
-          const p = updateCategory(editedCategory.id, editedCategory)
-          p.then(data => {
-            categoriesArray[objectIndex] = editedCategory;
-          })
+              </Form.Group>
 
-          event.preventDefault();
-          setShowEditWindow(false);
-          reset();
+            </Modal.Body>
+            <Modal.Footer>
+              <Button disabled={errors.name} variant="primary" type={"submit"}>
+                Save
+              </Button>
+              <Button variant="secondary" onClick={() => {
+                setShowCreationWindow(false);
+                reset();
+              }}>
+                Close
+              </Button>
+            </Modal.Footer>
+          </form>
+        </Modal>
 
-        }}>
-          <Modal.Header>
-            <Modal.Title>Product Editor</Modal.Title>
-            <CloseButton onClick={() => {
-
-              setShowEditWindow(false);
-              reset();
-            }}/>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group>
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text"
-                            placeholder="Enter category name"
-                            name="name"
-                            {...register("name", {required: true, minLength: 2, maxLength: 50})}
-                            defaultValue={typeof categoriesArray[objectIndex] !== 'undefined' ? categoriesArray[objectIndex].name : ''}
-                            onChange={(e) => {
-                              setValue('name', e.target.value, {shouldValidate: true});
-                            }}
-                            onFocus={(e) => {
-                              setValue('name', e.target.value, {shouldValidate: true});
-                            }}>
-              </Form.Control>
-              {errors.name && (
-                <CategoryErrorMessage message={getErrorMessage(errors.name.type, "name")}/>
-              )}
-
-            </Form.Group>
-
-          </Modal.Body>
-          <Modal.Footer>
-            <Button disabled={errors.name} variant="primary" type={"submit"}>
-              Save
-            </Button>
-            <Button variant="secondary" onClick={() => {
-              setShowEditWindow(false);
-              reset();
-            }}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </form>
-      </Modal>
-
-      <Modal show={showCreationWindow} centered>
-        <form onSubmit={(event) => {
-          const categoryToAdd = new Category();
-          categoryToAdd.id = 1
-          handleSubmit(handleSave(event, categoryToAdd));
-
-          const p = addNewCategory(categoryToAdd);
-          p.then(data => {
-            categoryToAdd.id = data.id
-            if (categoriesArray.length === itemsPerPage) {
-              setNextPage(page + 1);
-            } else {
-              const arrayWithNewCategory = [...categoriesArray, categoryToAdd];
-              setCategoriesArray(arrayWithNewCategory);
-              setObjectIndex(categoriesArray.length);
-            }
-          });
-
-          event.preventDefault();
-          setShowCreationWindow(false);
-          reset();
-
-        }}>
-          <Modal.Header>
-            <Modal.Title>Product Creator</Modal.Title>
-            <CloseButton onClick={() => {
-
-              setShowCreationWindow(false);
-              reset();
-            }}/>
-          </Modal.Header>
-          <Modal.Body>
-            <Form.Group>
-              <Form.Label>Name</Form.Label>
-              <Form.Control type="text"
-                            placeholder="Enter category name"
-                            name="name"
-                            {...register("name", {required: true, minLength: 2, maxLength: 50})}
-                            defaultValue={typeof categoriesArray[objectIndex] !== 'undefined' ? categoriesArray[objectIndex].name : ''}
-                            onChange={(e) => {
-                              setValue('name', e.target.value, {shouldValidate: true});
-                            }}
-                            onFocus={(e) => {
-                              setValue('name', e.target.value, {shouldValidate: true});
-                            }}>
-              </Form.Control>
-              {errors.name && (
-                <CategoryErrorMessage message={getErrorMessage(errors.name.type, "name")}/>
-              )}
-
-            </Form.Group>
-
-          </Modal.Body>
-          <Modal.Footer>
-            <Button disabled={errors.name} variant="primary" type={"submit"}>
-              Save
-            </Button>
-            <Button variant="secondary" onClick={() => {
-              setShowCreationWindow(false);
-              reset();
-            }}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </form>
-      </Modal>
-
-    </>
+      </>
   );
 }
 

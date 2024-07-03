@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from "react";
 import { Button, Card, CardBody, CardSubtitle, CardText, CardTitle, Col, Image, Row } from "react-bootstrap";
 
 //import 'bootstrap/dist/css/bootstrap.min.css';
+import Logo from "../../assets/pizza_test.png"
 import './css/OrderModel.css'
 
 
@@ -11,7 +12,7 @@ function OrderItemInfo(props) {
             <CardBody>
                 <Row>
                     <Col className="order-modal-item-img-container">
-                        <Image src={"assets/images/pizza_test.png"} className="order-modal-item-img" ></Image>
+                        <Image src={Logo} className="order-modal-item-img" ></Image>
                     </Col>
                     <Col className="order-modal-item-info">
                         <Row>

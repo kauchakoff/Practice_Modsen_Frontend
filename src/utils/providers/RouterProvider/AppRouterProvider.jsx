@@ -26,7 +26,7 @@ const AppRouterProvider = () => {
           <Route path="/" element={<Layout/>}>
             <Route path="orders" element={checkAuthStatus() ?<Orders userId={localStorage.getItem("userId")}/>: <Navigate to="/login"/>}/>
             <Route path="cart" element={checkAuthStatus() ? <Cart/> : <Navigate to="/login"/>}/>
-            <Route path="categories" element={checkAuthStatus() ? <CategoryEditor/> : <Navigate to="/login"/>}  />
+            <Route path="categories" element={checkAuthStatus() && localStorage.getItem("role") === "[ADMIN]" ? <CategoryEditor/> : <Navigate to="/login"/>}  />
             <Route path="products" element = {checkAuthStatus() ? <Products /> : <Navigate to="/login"/>} />
             <Route path="login" element = {checkAuthStatus() ? <Navigate to="/products" /> : <Login setUser={(user)=> setUser(user) }/>}/>
             <Route path="register" element = {checkAuthStatus() ? <Navigate to="/products" /> : <Register  setUser={(user)=> setUser(user) } />}/>

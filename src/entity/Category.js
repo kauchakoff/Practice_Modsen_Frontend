@@ -10,8 +10,7 @@ class Category {
       this.name = name;
   }*/
 
-  id = uuid.v4()
-
+  id = 0;
   name = "Category name";
 
 }

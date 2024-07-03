@@ -13,8 +13,7 @@ import Category from "../../entity/Category";
 import {getAllCategories} from "../Categories/CategoryAction";
 
 export function updateHeader  (itemsCount, totalCost)  {
-    // Здесь ваш код для обновления header
-    // Например, изменение текста в элементе header
+
     const element = document.querySelector('.item-count');
     const costElement = document.querySelector('.price-text');
     if(element!=null) element.textContent = itemsCount;
@@ -33,7 +32,7 @@ function Header() {
   defaultCategory.name = defaultAllCategoryName;
 
   const [categoriesArray, setCategoriesArray] = useState([defaultCategory]);
-  let [selectedCategoryId, setSelectedCategoryId] = useState(defaultAllCategoryId)
+  let [selectedCategoryId, setSelectedCategoryId] = useState(defaultAllCategoryId);
 
   useEffect(() => {
     const requestData = {
@@ -42,12 +41,14 @@ function Header() {
       sortBy: "id",
       sortOrder: "desc",
     }
-    getAllCategories(requestData).then((value) => {
-      setCategoriesArray([...categoriesArray, ...value]);
-      if (value.length > 0) {
-        setPage(page + 1);
-      }
-    });
+    if (localStorage.getItem('user')){
+      getAllCategories(requestData).then((value) => {
+        setCategoriesArray([...categoriesArray, ...value]);
+        if (value.length > 0) {
+          setPage(page + 1);
+        }
+      });
+    }
   }, [page]);
 
   let handleSelectedCategoryChange = (e) => {
@@ -61,9 +62,11 @@ function Header() {
                     <Link to={"/products"}><Logo/></Link>
                 </Col>
                 <Col>
-                    <Col>
-                        <Link to={"/categories"}><ViewCategoryEditorButton/></Link>
-                    </Col>
+                    { localStorage.getItem("user") && localStorage.getItem("role") === "[ADMIN]" && (
+                        <Col>
+                            <Link to={"/categories"}><ViewCategoryEditorButton/></Link>
+                        </Col>
+                    )}
                     <Col>
                         <Link to={"/cart"}><CartButton /></Link>
                     </Col>
@@ -82,13 +85,6 @@ function Header() {
                     </Col>
                 </Col>
             </Row>
-          <Row className='header-container'>
-            <select value={selectedCategoryId} onChange={handleSelectedCategoryChange}>
-              {categoriesArray.map((category) => <option
-                                                         value={category.id}>{category.name}</option>)}
-            </select>
-            <p>{`selectedCategoryId = ${selectedCategoryId}`}</p>
-          </Row>
 
         </header>
     );

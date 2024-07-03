@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import React, {useEffect, useState} from "react";
 import Image from 'react-bootstrap/Image';
 import logo from "../../resources/pizza_test.png";
-import {getCookie, setCookie} from "../../utils/cookieUtils";
+import {getCookie, setCookie} from "../../utils/cookie/cookieUtils";
 import {getErrorMessage, updateCartButton} from "./Products";
 import Form from "react-bootstrap/Form";
 import {useForm} from "react-hook-form";

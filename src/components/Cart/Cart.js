@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "./css/cart.css"
 import OrderItem from "./OrderItem";
 import CartForm from "./CartForm";
-import {getCookie, setCookie} from "../../utils/cookieUtils";
+import {getCookie, setCookie} from "../../utils/cookie/cookieUtils";
 import {updateHeader} from "../Header/Header";
 
 

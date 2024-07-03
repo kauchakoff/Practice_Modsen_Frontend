@@ -1,33 +1,47 @@
-import {CloseButton, Col, ListGroup, Modal, Row} from "react-bootstrap";
+import {CloseButton, Col, Dropdown, DropdownButton, DropdownItem, ListGroup, Modal, Row} from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import React, {useEffect, useState} from "react";
-import {Grid} from "@mui/material";
+import {Grid, Select} from "@mui/material";
 import PizzaCard from "./PizzaCard";
 import {useForm} from "react-hook-form";
 import {getCookie, setCookie} from "../../utils/cookie/cookieUtils";
 import {updateHeader} from "../Header/Header";
-import {createProductDB, updateProductDB, deleteProductDB, getProductsDB} from "../../utils/db/productUtils";
+import {
+    createProductDB,
+    deleteProductDB,
+    getProductsDB,
+    getProductByIdDB
+} from "../../utils/db/productUtils";
 import {getAllCategories} from "../Categories/CategoryAction";
 import ErrorMessage from "./ErrorMessage";
+import Product from "../../entity/Product";
+import Category from "../../entity/Category";
 
 
-export function updateCartButton(){
-    let totalPrice = 0;
-    let totalCount = 0;
-    const cartItems = JSON.parse(getCookie("cart"),"[]");
-    const productsArray = JSON.parse(getCookie("products") || "[]");
-    for(let i=0; i < productsArray.length; i++) {
-        const currentProductItem = cartItems.filter((item)=>productsArray[i].id === item.id)[0];
-        const currentProduct = productsArray[i]
-        if(typeof currentProductItem !== "undefined"){
-            totalCount += currentProductItem.count;
-            totalPrice += currentProduct.price * currentProductItem.count;
+export async function updateCartButton(){
+
+
+
+    try {
+        let totalPrice = 0;
+        let totalCount = 0;
+        const cartItems = JSON.parse(getCookie("cart") || "[]");
+        for (let i = 0; i < cartItems.length; i++) {
+            const currentProduct = await getProductByIdDB(cartItems[i].id);
+            console.log(currentProduct);
+            //const currentProduct = productsArray[i]
+            if (typeof currentProduct !== "undefined") {
+                totalCount += cartItems[i].count;
+                totalPrice += currentProduct.price * cartItems[i].count;
+            }
+
         }
-
+        updateHeader(totalCount, totalPrice.toFixed(2));
+    }catch (error){
+        console.log(error);
     }
-    updateHeader(totalCount,totalPrice.toFixed(2));
 }
 
 
@@ -48,6 +62,32 @@ function Products() {
     const [pageNumber, setPageNumber] = useState(1);
     const [isNextPageExists, setIsNextPageExists] = useState(isPageExists(pageNumber + 1,"id","asc"));
 
+    const [categoriesArray, setCategoriesArray] = useState([]);
+    let [selectedCategoryId, setSelectedCategoryId] = useState(-1);
+
+    useEffect(() => {
+        const requestData = {
+            pageNumber: 1,
+            pageSize: pageSize,
+            sortBy: "id",
+            sortOrder: "desc",
+        }
+        if (localStorage.getItem('user')){
+            getAllCategories(requestData).then((value) => {
+                const allCategory = new Category();
+                allCategory.id = -1;
+                allCategory.name = "All";
+                setCategoriesArray([allCategory, ...value]);
+            });
+        }
+    }, []);
+
+    useEffect(() => {
+        async function updatePagination() {
+            setIsNextPageExists(await isPageExists(pageNumber + 1, "id", "asc", selectedCategoryId));
+        }
+        updatePagination();
+    }, [selectedCategoryId,setPageNumber]);
 
 
     const {
@@ -60,46 +100,34 @@ function Products() {
         clearErrors
     } = useForm();
 
-    useEffect(()=>{
-        try {
-            let categoryId = JSON.parse(getCookie("category"));
-            if(categoryId === null) {
-                console.log(categoryId);
-                const requestData = {
-                    pageNumber: 1,
-                    pageSize: pageSize,
-                    sortBy: "id",
-                    sortOrder: "asc",
-                }
-                getAllCategories(requestData).then((categories)=> {
-                    if (categories.length > 0) {
-                        categoryId = categories[0].id;
-                    } else {
-                        categoryId = 1;
-                    }
-                    console.log(categoryId);
-                    setCookie("category", categoryId, 7)
-                })
-            }
-        } catch (error) {
-            setShowDeleteConfirmation(false);
-            setErrorMessage(error.message);
-            setErrorData(error.data);
-            setShowError(true);
-        }
-    },[]);
-
     useEffect(() => {
         async function loadProducts() {
             try {
-                const cookie = JSON.parse(getCookie("category"), "1");
-                console.log(cookie);
-                const data = await getProductsDB(pageNumber, pageSize, "categoryId", "asc", 1);
+                let data;
+
+                if(selectedCategoryId === undefined || selectedCategoryId === null || selectedCategoryId  < 1) {
+                    data = await getProductsDB(pageNumber, pageSize, "categoryId", "asc");
+                } else {
+                    data = await getProductsDB(pageNumber, pageSize, "categoryId", "asc", selectedCategoryId);
+                }
                 data.map((item) => {
                     item.categoryId = item.category.id;
-                    delete item.category.id;
+                    delete item.category;
                 });
                 setProductsArray(data);
+                console.log(JSON.stringify(data));
+                const array = [];
+
+                for(let i = 0; i < data.length; i++) {
+                    const item = {
+                        id : data[i].id,
+                        price : data[i].price
+                    }
+                    array.push(item);
+                }
+                setCookie("products",JSON.stringify(array),7);
+                console.log(data);
+
             } catch (error) {
                 setShowDeleteConfirmation(false);
                 setErrorMessage(error.message);
@@ -109,13 +137,16 @@ function Products() {
         }
         loadProducts();
 
-    }, []);
+    }, [selectedCategoryId]);
 
 
 
 
     const handleSave = (data,product) => {
+        console.log(data);
         const elements =  data.target.elements;
+        console.log(elements.name.value);
+        console.log(product);
         product.name = elements.name.value;
         product.categoryId = elements.category.value;
         product.ingredients = elements.ingredients.value;
@@ -128,7 +159,7 @@ function Products() {
 
     async function deleteProduct(product){
 
-        let cart = JSON.parse(getCookie("cart"),"[]");
+        let cart = JSON.parse(getCookie("cart") || "[]");
         cart = cart.filter((element)=> element.id !== product.id);
         setCookie("cart",JSON.stringify(cart),7);
         setShowDeleteConfirmation(false);
@@ -146,14 +177,14 @@ function Products() {
 
     async function createProduct(event) {
         event.preventDefault();
-        handleSubmit(handleSave(event,productsArray[productsArray.length - 1]))
+        let  createdProduct = new Product();
+        handleSubmit(handleSave(event,createdProduct))
         try {
-            const createdProduct = await createProductDB(productsArray[productsArray.length - 1]);
+            createdProduct = await createProductDB(createdProduct);
             createdProduct.categoryId = createdProduct.category.id;
             delete createdProduct.category;
-            const arrayWithNewProduct = [...productsArray, createdProduct];
-            setProductsArray(arrayWithNewProduct);
-            setCookie("products", JSON.stringify(arrayWithNewProduct), 7);
+            productsArray.push(createdProduct);
+            setCookie("products", JSON.stringify(productsArray), 7);
             setShowCreateWindow(false);
         } catch (error) {
             setShowCreateWindow(false);
@@ -164,19 +195,57 @@ function Products() {
     }
 
 
-    async function setNextPage(pageNumber,sortBy,sortOrder){
-        const products = await getProductsDB(pageNumber,pageSize,sortBy,sortOrder,1);
+    async function setNextPage(pageNumber,sortBy,sortOrder,selectedCategoryId){
+        let products;
+        console.log("Current selected next page:" + selectedCategoryId);
+        if(selectedCategoryId === undefined || selectedCategoryId === null || selectedCategoryId < 1) {
+            products = await getProductsDB(pageNumber, pageSize, "categoryId", "asc");
+        } else {
+            products = await getProductsDB(pageNumber, pageSize, "categoryId", "asc", selectedCategoryId);
+        }
         setProductsArray(products);
     }
 
-    async function isPageExists(pageNumber,sortBy,sortOrder){
-        const products = await getProductsDB(pageNumber,pageSize,sortBy,sortOrder,1);
+    async function isPageExists(pageNumber,sortBy,sortOrder,selectedCategoryId){
+        let products;
+        console.log("Current selected is exists:" + selectedCategoryId);
+        if(selectedCategoryId === undefined || selectedCategoryId === null || selectedCategoryId < 1) {
+            products = await getProductsDB(pageNumber, pageSize, "categoryId", "asc");
+        } else {
+            products = await getProductsDB(pageNumber, pageSize, "categoryId", "asc", selectedCategoryId);
+        }
         return products.length !== 0;
+    }
+
+
+    let handleSelectedCategoryChange = (e) => {
+        setSelectedCategoryId(e.target.value)
+        setPageNumber(1);
     }
 
 
     return (
         <>
+
+                <Row style={{margin: 10,
+                borderTopLeftRadius: 0}}>
+                    <select className="dropdown btn btn-warning"
+                            value={null}
+                            style={{
+                                margin:5,
+                                color: 'white',
+                                backgroundColor: '#FFA500'
+                            }}
+                            onChange={handleSelectedCategoryChange}>
+                        {categoriesArray.map((category) => <option
+                            className="dropdown-item"
+                            style={{backgroundColor: 'white',
+                                    color: 'black'}}
+                            value={category.id}>Category "{category.name}"</option>)}
+                    </select>
+                </Row>
+
+
             <Grid container spacing={0} columns={{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}}>
                 {productsArray.map((item, index) => (
                     <Grid item xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
@@ -203,7 +272,8 @@ function Products() {
 
                 ))}
                 <Grid item xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
-                    { localStorage.getItem("role") === "[ADMIN]" &&
+                    { (localStorage.getItem("role") === "[ADMIN]"
+                            && !isNextPageExists) &&
                     <Card style={{
                         margin: 5,
                         display: "grid",
@@ -236,8 +306,8 @@ function Products() {
                         <Button className='btn-pagination' disabled={pageNumber === 1}
                                 onClick={async () => {
                                     try {
-                                        setNextPage(Math.max(pageNumber - 1, 1), "id", "asc");
-                                        setIsNextPageExists(await isPageExists(pageNumber - 1, "id", "asc"));
+                                        setNextPage(Math.max(pageNumber - 1, 1), "id", "asc",selectedCategoryId);
+                                        setIsNextPageExists(await isPageExists(pageNumber - 1, "id", "asc",selectedCategoryId));
                                         console.log(`Next page exists: ${isNextPageExists} `);
                                         setPageNumber(Math.max(pageNumber - 1, 1));
                                     } catch (error) {
@@ -254,8 +324,8 @@ function Products() {
                     <Col>
                         <Button className='btn-pagination' disabled={!isNextPageExists} onClick={async () => {
                             try {
-                                setNextPage(pageNumber + 1,"id","asc");
-                                setIsNextPageExists(await isPageExists(pageNumber + 2,"id","asc"));
+                                setNextPage(pageNumber + 1,"id","asc",selectedCategoryId);
+                                setIsNextPageExists(await isPageExists(pageNumber + 2,"id","asc",selectedCategoryId));
                                 setPageNumber(pageNumber + 1);
                             } catch (error) {
                                 setShowDeleteConfirmation(false);
@@ -444,7 +514,6 @@ function Products() {
                     </Button>
                 </Modal.Footer>
             </Modal>
-                )
 
 
             <Modal show={showError} centered>

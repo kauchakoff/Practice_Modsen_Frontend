@@ -35,9 +35,23 @@ export async function updateProductDB(product){
 
 export async function getProductsDB(pageNumber, pageSize, sortBy, sortOrder,categoryId){
     try {
-        let productList = await http.get(`/products?pageNumber=${pageNumber - 1}&&pageSize=${pageSize}&&sortBy=${sortBy}&&sortOrder=${sortOrder}&&category=${categoryId}`);
+        let productList
 
+        if(categoryId) {
+            productList = await http.get(`/products?pageNumber=${pageNumber - 1}&&pageSize=${pageSize}&&sortBy=${sortBy}&&sortOrder=${sortOrder}&&category=${categoryId}`);
+        } else {
+            productList = await http.get(`/products?pageNumber=${pageNumber - 1}&&pageSize=${pageSize}&&sortBy=${sortBy}&&sortOrder=${sortOrder}`);
+        }
         return productList.data;
+    }catch (error){
+        throw error;
+    }
+}
+
+export async function getProductByIdDB(productId){
+    try {
+        let product = await http.get(`/products/` + productId);
+        return product.data;
     }catch (error){
         throw error;
     }
