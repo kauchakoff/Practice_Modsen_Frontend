@@ -17,7 +17,7 @@ export const login = async (email, password) => {
       localStorage.removeItem("refreshToken");
       localStorage.removeItem("role");
       const response = await http.post('/auth/authenticate', userData);
-      localStorage.setItem("userId",await  response.data.id);
+      localStorage.setItem("userId",await  response.data.userId);
       localStorage.setItem("accessToken", await response.data.accessToken);
       localStorage.setItem("refreshToken", await response.data.refreshToken);
       localStorage.setItem("role", await response.data.role);
@@ -40,7 +40,7 @@ export const register = async (userData) => {
       localStorage.removeItem("user");
       const response = await http.post('/auth/register', userData);
 
-      localStorage.setItem("userId",await  response.data.id);
+      localStorage.setItem("userId",await  response.data.userId);
       localStorage.setItem("accessToken", await response.data.accessToken);
       localStorage.setItem("refreshToken", await response.data.refreshToken);
       localStorage.setItem("role", await response.data.role);
@@ -87,6 +87,7 @@ http.interceptors.request.use((config) => {
 // Добавьте новый перехватчик ответов
 http.interceptors.response.use(undefined, async error => {
   const originalRequest = error.config;
+  console.log("popal in resfresh")
   if (error.response.status === 401 && !originalRequest._retry) {
     originalRequest._retry = true;
     const refreshToken = localStorage.getItem('refreshToken');
@@ -102,7 +103,6 @@ http.interceptors.response.use(undefined, async error => {
         localStorage.setItem('accessToken', await response.data.accessToken);
         return http(originalRequest);
       } catch (err) {
-        console.log("Egor:"+err.message)
         localStorage.removeItem('refreshToken');
         window.location.reload();
       }

@@ -13,8 +13,7 @@ import Category from "../../entity/Category";
 import {getAllCategories} from "../Categories/CategoryAction";
 
 export function updateHeader  (itemsCount, totalCost)  {
-    // Здесь ваш код для обновления header
-    // Например, изменение текста в элементе header
+
     const element = document.querySelector('.item-count');
     const costElement = document.querySelector('.price-text');
     if(element!=null) element.textContent = itemsCount;
