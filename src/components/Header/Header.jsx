@@ -41,12 +41,14 @@ function Header() {
       sortBy: "id",
       sortOrder: "desc",
     }
-    getAllCategories(requestData).then((value) => {
-      setCategoriesArray([...categoriesArray, ...value]);
-      if (value.length > 0) {
-        setPage(page + 1);
-      }
-    });
+    if (localStorage.getItem('user')){
+      getAllCategories(requestData).then((value) => {
+        setCategoriesArray([...categoriesArray, ...value]);
+        if (value.length > 0) {
+          setPage(page + 1);
+        }
+      });
+    }
   }, [page]);
 
   let handleSelectedCategoryChange = (e) => {
@@ -81,14 +83,16 @@ function Header() {
                     </Col>
                 </Col>
             </Row>
-          <Row className='header-container'>
+          {localStorage.getItem('user') &&
+            (
+            <Row className='header-container'>           
             <select value={selectedCategoryId} onChange={handleSelectedCategoryChange}>
-              {categoriesArray.map((category) => <option
-                                                         value={category.id}>{category.name}</option>)}
-            </select>
-            <p>{`selectedCategoryId = ${selectedCategoryId}`}</p>
-          </Row>
-
+                {categoriesArray.map((category) => <option
+                                                          value={category.id}>{category.name}</option>)}
+              </select>
+              <p>{`selectedCategoryId = ${selectedCategoryId}`}</p>
+            </Row>
+            )}
         </header>
     );
 }

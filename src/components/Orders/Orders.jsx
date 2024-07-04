@@ -47,7 +47,9 @@ const Orders = (props) => {
                     setNextPage(page - 1);
                 }
             } else {
-                await LoadOrders(userId, page);
+                if (nextPage !== page) {
+                    setNextPage(page);
+                } else await LoadOrders(userId, page);
             }
             setErrorMessage("")
         } catch (error)
