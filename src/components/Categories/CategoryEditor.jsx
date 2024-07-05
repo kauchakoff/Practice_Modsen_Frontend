@@ -20,6 +20,9 @@ function CategoryEditor() {
     []
   );
 
+  const [showServerError, setShowServerError] = useState(false);
+  const [serverErrorMessage, setServerErrorMessage] = useState("");
+
   const [showDeleteConfirmation, setShowDeleteConfirmation] = React.useState(false);
   const [objectIndex, setObjectIndex] = React.useState(0);
   const [removeIndex, setRemoveIndex] = React.useState(0);
@@ -96,6 +99,24 @@ function CategoryEditor() {
 
   return (
       <>
+        <Modal show={showServerError} centered>
+          <Modal.Header>
+            <Modal.Title>Error</Modal.Title>
+            <CloseButton onClick={() => {
+              setShowServerError(false)
+            }}/>
+          </Modal.Header>
+          <Modal.Body>
+            <p>{serverErrorMessage}</p>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="warning" onClick={() => {
+              setShowServerError(false)
+            }}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
         <Grid container spacing={0} columns={{xs: 1, sm: 2, md: 3, lg: 4, xl: 5}}>
           {categoriesArray.length > 0 && categoriesArray.map((item, index) => (
               <Grid item xs={1} sm={1} md={1} lg={1} xl={1} xxl={1}>
@@ -221,7 +242,10 @@ function CategoryEditor() {
                   });
                 }
 
-              })
+              }).catch((error) => {
+                setServerErrorMessage(error.message);
+                setShowServerError(true)
+              });
               setShowDeleteConfirmation(false)
               //place to perform back-end delete process
             }}>
@@ -243,7 +267,10 @@ function CategoryEditor() {
             const p = updateCategory(editedCategory.id, editedCategory)
             p.then(data => {
               categoriesArray[objectIndex] = editedCategory;
-            })
+            }).catch((error) => {
+              setServerErrorMessage(error.message);
+              setShowServerError(true)
+            });
 
             event.preventDefault();
             setShowEditWindow(false);
@@ -299,7 +326,6 @@ function CategoryEditor() {
             const categoryToAdd = new Category();
             categoryToAdd.id = 1
             handleSubmit(handleSave(event, categoryToAdd));
-
             const p = addNewCategory(categoryToAdd);
             p.then(data => {
               categoryToAdd.id = data.id
@@ -310,6 +336,9 @@ function CategoryEditor() {
                 setCategoriesArray(arrayWithNewCategory);
                 setObjectIndex(categoriesArray.length);
               }
+            }).catch((error) => {
+              setServerErrorMessage(error.message);
+              setShowServerError(true)
             });
 
             event.preventDefault();
