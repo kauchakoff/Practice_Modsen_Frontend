@@ -1,8 +1,8 @@
 import {CardText, ListGroup} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
-import "./CategoryErrorMessage.css"
+import "./CategoryValidationMessage.css"
 
-function CategoryErrorMessage(props) {
+function CategoryValidationMessage(props) {
 
   const {message} = props;
 
@@ -27,4 +27,4 @@ function CategoryErrorMessage(props) {
   )
 }
 
-export default CategoryErrorMessage;
+export default CategoryValidationMessage;
