@@ -7,7 +7,7 @@ import CategoryCard from "./CategoryCard";
 import {useForm} from "react-hook-form";
 import Category from "../../entity/Category";
 import {addNewCategory, deleteCategory, getAllCategories, updateCategory} from "./CategoryAction";
-import CategoryErrorMessage from "./CategoryErrorMessage";
+import CategoryValidationMessage from "./CategoryValidationMessage";
 import {getProductsDB} from "../../utils/db/productUtils";
 
 
@@ -274,7 +274,7 @@ function CategoryEditor() {
                               }}>
                 </Form.Control>
                 {errors.name && (
-                    <CategoryErrorMessage message={getErrorMessage(errors.name.type, "name")}/>
+                    <CategoryValidationMessage message={getErrorMessage(errors.name.type, "name")}/>
                 )}
 
               </Form.Group>
@@ -341,7 +341,7 @@ function CategoryEditor() {
                               }}>
                 </Form.Control>
                 {errors.name && (
-                    <CategoryErrorMessage message={getErrorMessage(errors.name.type, "name")}/>
+                    <CategoryValidationMessage message={getErrorMessage(errors.name.type, "name")}/>
                 )}
 
               </Form.Group>
